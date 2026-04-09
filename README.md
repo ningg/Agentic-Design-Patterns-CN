@@ -17,7 +17,7 @@ Agentic 时代已经来了，热热闹闹，作为从业者，需要了解些技
 pdf 下载：[https://github.com/ningg/Agentic-Design-Patterns-CN/releases](https://github.com/ningg/Agentic-Design-Patterns-CN/releases)
 
 
-<img src="assets-new/Agentic_Design_Patterns_Book_Cover.png" alt="Agentic Design Patterns" width="100" />
+<img src="cn/assets-new/Agentic_Design_Patterns_Book_Cover.png" alt="Agentic Design Patterns" width="100" />
 
 ## 3.贡献
 
