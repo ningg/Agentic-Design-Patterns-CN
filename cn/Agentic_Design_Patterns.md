@@ -6,7 +6,6 @@
 
 > *智能系统构建实践指南，[Antonio Gulli](https://www.linkedin.com/in/searchguy/)*
 
-![Agentic Design Patterns](assets/Agentic_Design_Patterns.png)
 
 Table of Contents \- total 424 pages   \= 1+2+1+1+4+9+103+61+34+114+74+5+4 11  
 

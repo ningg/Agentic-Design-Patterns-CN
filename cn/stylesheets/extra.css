@@ -1,0 +1,31 @@
+html,
+body,
+.md-main,
+.md-main__inner,
+.md-content,
+.md-content__inner,
+.md-sidebar,
+.md-sidebar__scrollwrap {
+  overscroll-behavior: none;
+}
+
+/* Emphasize top-level sidebar sections (e.g. Part One). */
+.md-nav--primary > .md-nav__list > .md-nav__item--section > .md-nav__link {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+/* Keep breathing room at page bottom for reading comfort. */
+.md-content__inner {
+  padding-bottom: 3lh;
+}
+
+/* Make blockquote text and border teal instead of gray. */
+.md-typeset blockquote {
+  border-left-color: #14b8a6;
+  color: #0f766e;
+}
+
+.md-typeset blockquote > :first-child {
+  margin-top: 0;
+}

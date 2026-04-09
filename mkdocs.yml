@@ -1,0 +1,97 @@
+site_name: Agentic Design Patterns (CN)
+site_description: Agentic Design Patterns 中英文版，智能体设计模式
+site_url: http://ningg.top/Agentic-Design-Patterns-CN
+repo_url: https://github.com/ningg/Agentic-Design-Patterns-CN
+docs_dir: cn
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  generator: false
+
+nav:
+  # AUTO_NAV_START
+  - 首页: README.md
+  - Introduction:
+    - Dedication: 00-Introduction/01-Dedication.md
+    - Acknowledgment: 00-Introduction/02-Acknowledgment.md
+    - Foreword: 00-Introduction/03-Foreword.md
+    - A Thought Leaders Perspective Power and Responsibility: 00-Introduction/04-A_Thought_Leaders_Perspective_Power_and_Responsibility.md
+    - Introduction: 00-Introduction/05-Introduction.md
+    - What makes an AI system an Agent: 00-Introduction/06-What_makes_an_AI_system_an_Agent.md
+  - Part One:
+    - Chapter 1-Prompt Chaining: 01-Part_One/Chapter_1-Prompt_Chaining.md
+    - Chapter 2-Routing: 01-Part_One/Chapter_2-Routing.md
+    - Chapter 3-Parallelization: 01-Part_One/Chapter_3-Parallelization.md
+    - Chapter 4-Reflection: 01-Part_One/Chapter_4-Reflection.md
+    - Chapter 5-Tool Use (Function Calling): 01-Part_One/Chapter_5-Tool_Use_(Function_Calling).md
+    - Chapter 6-Planning: 01-Part_One/Chapter_6-Planning.md
+    - Chapter 7-Multi-Agent Collaboration: 01-Part_One/Chapter_7-Multi-Agent_Collaboration.md
+  - Part Two:
+    - Chapter 8-Memory Management: 02-Part_Two/Chapter_8-Memory_Management.md
+    - Chapter 9-Learning and Adaptation: 02-Part_Two/Chapter_9-Learning_and_Adaptation.md
+    - Chapter 10-Model Context Protocol (MCP): 02-Part_Two/Chapter_10-Model_Context_Protocol_(MCP).md
+    - Chapter 11-Goal Setting and Monitoring: 02-Part_Two/Chapter_11-Goal_Setting_and_Monitoring.md
+  - Part Three:
+    - Chapter 12-Exception Handling and Recovery: 03-Part_Three/Chapter_12-Exception_Handling_and_Recovery.md
+    - Chapter 13-Human in the Loop: 03-Part_Three/Chapter_13-Human_in_the_Loop.md
+    - Chapter 14-Knowledge Retrieval (RAG): 03-Part_Three/Chapter_14-Knowledge_Retrieval_(RAG).md
+  - Part Four:
+    - Chapter 15-Inter Agent Communication (A2A): 04-Part_Four/Chapter_15-Inter_Agent_Communication_(A2A).md
+    - Chapter 16-Resource Aware Optimization: 04-Part_Four/Chapter_16-Resource_Aware_Optimization.md
+    - Chapter 17-Reasoning Techniques: 04-Part_Four/Chapter_17-Reasoning_Techniques.md
+    - Chapter 18-Guardrails Safety Patterns: 04-Part_Four/Chapter_18-Guardrails_Safety_Patterns.md
+    - Chapter 19-Evaluation and Monitoring: 04-Part_Four/Chapter_19-Evaluation_and_Monitoring.md
+    - Chapter 20-Prioritization: 04-Part_Four/Chapter_20-Prioritization.md
+    - Chapter 21-Exploration and Discovery: 04-Part_Four/Chapter_21-Exploration_and_Discovery.md
+  - Appendix:
+    - Appendix A-Advanced Prompting Techniques: 05-Appendix/Appendix_A-Advanced_Prompting_Techniques.md
+    - Appendix B-AI Agentic Interactions From GUI to Real World Environment: 05-Appendix/Appendix_B-AI_Agentic_Interactions_From_GUI_to_Real_World_Environment.md
+    - Appendix C-Quick Overview of Agentic Frameworks: 05-Appendix/Appendix_C-Quick_Overview_of_Agentic_Frameworks.md
+    - Appendix D-Building an Agent with AgentSpace (on line only): 05-Appendix/Appendix_D-Building_an_Agent_with_AgentSpace_(on_line_only).md
+    - Appendix E-AI Agents on the CLI: 05-Appendix/Appendix_E-AI_Agents_on_the_CLI.md
+    - Appendix F-Under the Hood An Inside Look at the Agents Reasoning Engines: 05-Appendix/Appendix_F-Under_the_Hood_An_Inside_Look_at_the_Agents_Reasoning_Engines.md
+    - Appendix G-Coding Agents: 05-Appendix/Appendix_G-Coding_Agents.md
+  - Others:
+    - publics as website mkdocs: publics_as_website_mkdocs.md
+    - Agentic Design Patterns: Agentic_Design_Patterns.md
+    - Conclusion: Conclusion.md
+    - Glossary: Glossary.md
+    - Index of Terms: Index_of_Terms.md
+    - LICENSE: LICENSE.md
+    - Online Contribution-Frequently Asked Questions Agentic Design Patterns: Online_Contribution-Frequently_Asked_Questions_Agentic_Design_Patterns.md
+  # AUTO_NAV_END

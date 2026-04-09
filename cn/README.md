@@ -166,10 +166,11 @@ This book answers all that with patterns you can actually apply. The 70+ page ap
 
 ## License
 
-This repository is licensed under the [MIT License](LICENSE).
+This repository is licensed under the [MIT License](LICENSE.md).
 
-> 本仓库采用 [MIT 许可证](LICENSE) 授权。
+> 本仓库采用 [MIT 许可证](LICENSE.md) 授权。
 
 Agentic Design Patterns
 
 > 《Agentic Design Patterns》（智能体设计模式）
+
