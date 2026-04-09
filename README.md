@@ -1,4 +1,4 @@
-《Agentic Design Patterns》 智能体设计模式，中英文版本
+#《Agentic Design Patterns》 智能体设计模式，中英文版本
 
 
 ## 1.概要
@@ -17,7 +17,9 @@ Agentic 时代已经来了，热热闹闹，作为从业者，需要了解些技
 pdf 下载：[https://github.com/ningg/Agentic-Design-Patterns-CN/releases](https://github.com/ningg/Agentic-Design-Patterns-CN/releases)
 
 
-<img src="cn/assets-new/Agentic_Design_Patterns_Book_Cover.png" alt="Agentic Design Patterns" width="100" />
+<p align="center">
+  <img src="cn/assets-new/Agentic_Design_Patterns_Book_Cover.png" alt="Agentic Design Patterns" width="200" />
+</p>
 
 ## 3.贡献
 
