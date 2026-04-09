@@ -274,9 +274,9 @@ The code incorporates a simulation function (`run_simulation`) of asynchronous n
 
 > `run_simulation` 以异步方式串起两个故事线：一是「高优先级 + 指定执行人」的完整需求，二是信息稀疏的一般需求。`verbose=True` 会把 ReAct 轨迹打印到控制台，便于观察排序与工具调用链路。
 
-# At a Glance
+## At a Glance
 
-> # 要点速览
+> ## 要点速览
 
 **What:** AI agents operating in complex environments face a multitude of potential actions, conflicting goals, and finite resources. Without a clear method to determine their next move, these agents risk becoming inefficient and ineffective. This can lead to significant operational delays or a complete failure to accomplish primary objectives. The core challenge is to manage this overwhelming number of choices to ensure the agent acts purposefully and logically.
 
@@ -300,9 +300,9 @@ Fig.1: Prioritization Design pattern
 
 > 图 1：优先级排序设计模式（示意）
 
-# Key Takeaways
+## Key Takeaways
 
-> # 关键要点
+> ## 关键要点
 
 * Prioritization enables AI agents to function effectively in complex, multi-faceted environments.  
 * Agents utilize established criteria such as urgency, importance, and dependencies to evaluate and rank tasks.  
@@ -316,9 +316,9 @@ Fig.1: Prioritization Design pattern
 > * 优先级既作用于战略层（选目标），也作用于战术层（选下一步动作）。
 > * 良好的排序策略直接提升吞吐、稳定性与对突发状况的承受力。
 
-# Conclusions
+## Conclusions
 
-> # 结论
+> ## 结论
 
 In conclusion, the prioritization pattern is a cornerstone of effective agentic AI, equipping systems to navigate the complexities of dynamic environments with purpose and intelligence. It allows an agent to autonomously evaluate a multitude of conflicting tasks and goals, making reasoned decisions about where to focus its limited resources. This agentic capability moves beyond simple task execution, enabling the system to act as a proactive, strategic decision-maker. By weighing criteria such as urgency, importance, and dependencies, the agent demonstrates a sophisticated, human-like reasoning process.
 
@@ -328,7 +328,7 @@ A key feature of this agentic behavior is dynamic re-prioritization, which grant
 
 > 其中尤为亮眼的是**动态重排**：当外部条件突变时，代理可以即时改写待办队列。示例代码也展示了代理如何解析含糊需求、挑选工具并按 ReAct 顺序执行——这种自我编排工作流的能力，正是智能体区别于一次性脚本的分水岭。想交付能在真实世界长期运转的代理，优先级思维几乎是必修课。
 
-# References
+## References
 
 1. Examining the Security of Artificial Intelligence in Project Management: A Case Study of AI-driven Project Scheduling and Resource Allocation in Information Systems Projects ; [https://www.irejournals.com/paper-details/1706160](https://www.irejournals.com/paper-details/1706160)
 2. AI-Driven Decision Support Systems in Agile Software Project Management: Enhancing Risk Mitigation and Resource Allocation; [https://www.mdpi.com/2079-8954/13/3/208](https://www.mdpi.com/2079-8954/13/3/208)  

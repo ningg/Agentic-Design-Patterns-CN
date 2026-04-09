@@ -309,9 +309,9 @@ This Python code implements a prompt routing system to answer user questions. It
 
 > 这段 Python 以提示路由驱动问答：`.env` 中读取 OpenAI 与 Google 自定义搜索密钥；`classify_prompt` 借助 OpenAI 将输入打上 simple / reasoning / internet_search 标签；命中搜索类则先拉取检索结果，再连同用户问题一并传给对应档位的补全模型。入口函数 `handle_prompt`（正文一处误作 handleprompt）串联分类、可选搜索与生成，最终返回标签、实际调用模型与答案，实现按题型分摊算力。
 
-# Hands-On Code Example (OpenRouter)
+## Hands-On Code Example (OpenRouter)
 
-> # OpenRouter 动手示例
+> ## OpenRouter 动手示例
 
 OpenRouter offers a unified interface to hundreds of AI models via a single API endpoint. It provides automated failover and cost-optimization, with easy integration through your preferred SDK or framework.
 

@@ -255,7 +255,7 @@ The code sets up a tool-calling agent using the LangChain library and the Google
 
 > 上述代码基于 LangChain 与 Google Gemini 搭建了一个工具调用智能体：其中 `search_information` 工具模拟对特定查询返回事实性答案，对“weather in london”“capital of france”“population of earth”等查询设有预置回复，其余情况则走默认分支。代码先初始化具备工具调用能力的 `ChatGoogleGenerativeAI`，再用 `ChatPromptTemplate` 引导对话；`create_tool_calling_agent` 将模型、工具与提示模板组合为智能体，`AgentExecutor` 负责运行时调度与工具执行。`run_agent_with_tool` 以异步方式发起查询并打印结果；`main` 则并发运行多条查询，以覆盖特定路径与默认路径；最后通过 `asyncio.run(main())` 执行全部任务。整个流程仅在 LLM 初始化成功后才继续完成智能体的构建与运行。
 
-# Hands-On Code Example (CrewAI)
+## Hands-On Code Example (CrewAI)
 
 This code provides a practical example of how to implement function calling (Tools) within the CrewAI framework. It sets up a simple scenario where an agent is equipped with a tool to look up information. The example specifically demonstrates fetching a simulated stock price using this agent and tool.
 

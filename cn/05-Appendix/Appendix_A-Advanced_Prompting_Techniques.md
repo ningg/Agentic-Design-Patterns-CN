@@ -354,9 +354,9 @@ Structuring Prompts Beyond the basic techniques of providing examples, the way y
 
 > （对应前文“Structuring Prompts”段）除了堆示例，提示本身的章节划分同样决定模型读不读得懂：用标签或空行把指令、背景、样例、用户输入隔开，让模型知道哪里是规则、哪里是素材。
 
-# Reasoning and Thought Process Techniques
+## Reasoning and Thought Process Techniques
 
-> # 推理与思维过程技术
+> ## 推理与思维过程技术
 
 Large language models excel at pattern recognition and text generation but often face challenges with tasks requiring complex, multi-step reasoning. This appendix focuses on techniques designed to enhance these reasoning capabilities by encouraging models to reveal their internal thought processes. Specifically, it addresses methods to improve logical deduction, mathematical computation, and planning.
 
@@ -489,9 +489,9 @@ These reasoning and thought process techniques are crucial for building agents c
 
 > 这些技巧让智能体不止会“查资料 + 润色”，而是能承担真正的多步认知劳动：把推理摊开、多角度自检、必要时回到抽象层重新框定问题。
 
-# Action and Interaction Techniques
+## Action and Interaction Techniques
 
-> # 行动与交互技术
+> ## 行动与交互技术
 
 Intelligent agents possess the capability to actively engage with their environment, beyond generating text. This includes utilizing tools, executing external functions, and participating in iterative cycles of observation, reasoning, and action. This section examines prompting techniques designed to enable these active behaviors.
 

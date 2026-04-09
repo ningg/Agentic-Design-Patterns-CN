@@ -19,6 +19,7 @@ pdf 下载：[https://github.com/ningg/Agentic-Design-Patterns-CN/releases](http
 
 <p align="center">
   <img src="cn/assets-new/Agentic_Design_Patterns_Book_Cover.png" alt="Agentic Design Patterns" width="200" />
+  <img src="cn/assets-new/Agentic_Design_Patterns_Book_Cover_CN.png" alt="Agentic Design Patterns" width="200" />
 </p>
 
 ## 3.贡献

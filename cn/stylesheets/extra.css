@@ -29,3 +29,17 @@ body,
 .md-typeset blockquote > :first-child {
   margin-top: 0;
 }
+
+@media print {
+  /* Start each chapter on a new page in exported PDF. */
+  .md-content__inner h1 {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Avoid an empty first page before the first chapter. */
+  .md-content__inner h1:first-of-type {
+    break-before: auto;
+    page-break-before: auto;
+  }
+}
