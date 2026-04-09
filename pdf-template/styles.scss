@@ -1,0 +1,53 @@
+@page {
+  margin: 25mm 10mm 25mm 10mm;
+
+  @bottom-left {
+    font-size: 8pt;
+    color: #64748b;
+    content: "https://ningg.top/Agentic-Design-Patterns-CN";
+  }
+}
+
+@media print {
+  /* Slightly larger base text for exported PDF readability. */
+  body {
+    font-size: 1.05em;
+  }
+
+  /* Keep images within half-page height in exported PDF. */
+  article img,
+  .md-typeset img,
+  figure img {
+    max-height: 50vh;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Normalize list indentation for both English and Chinese content. */
+  article ul,
+  article ol,
+  .md-typeset ul,
+  .md-typeset ol,
+  blockquote ul,
+  blockquote ol {
+    margin-top: 0.45em;
+    margin-bottom: 0.45em;
+    padding-left: 1.8em;
+  }
+
+  article li,
+  .md-typeset li,
+  blockquote li {
+    margin: 0.2em 0;
+  }
+
+  article li > ul,
+  article li > ol,
+  .md-typeset li > ul,
+  .md-typeset li > ol {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    padding-left: 1.5em;
+  }
+}

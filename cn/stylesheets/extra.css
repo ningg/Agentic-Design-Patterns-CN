@@ -31,15 +31,5 @@ body,
 }
 
 @media print {
-  /* Start each chapter on a new page in exported PDF. */
-  .md-content__inner h1 {
-    break-before: page;
-    page-break-before: always;
-  }
-
-  /* Avoid an empty first page before the first chapter. */
-  .md-content__inner h1:first-of-type {
-    break-before: auto;
-    page-break-before: auto;
-  }
+  /* PDF-specific styles are maintained in pdf-template/styles.scss. */
 }
