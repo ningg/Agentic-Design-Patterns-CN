@@ -10,12 +10,12 @@ site/pdf/Agentic-Design-Patterns-CN.pdf
 
 ## PDF plugin switch (`MKDOCS_ENABLE_PDF`)
 
-`mkdocs.yml` sets `enabled_if_env: MKDOCS_ENABLE_PDF`. The PDF plugin runs only when this variable is `1`:
+`mkdocs.yml` sets `enabled_if_env: MKDOCS_ENABLE_PDF`. The PDF plugin only runs when this variable is `1`, but MkDocs still imports the plugin during config loading. Therefore the strict CI check uses a separate `mkdocs-strict.yml` file that omits `with-pdf` entirely:
 
 - **`MKDOCS_ENABLE_PDF` unset or `0`**: skips PDF rendering (faster; no WeasyPrint layout pass). You can run `mkdocs build --strict` without `mkdocs-with-pdf` counting WeasyPrint log lines as build failures. (The package still imports WeasyPrint; on macOS you still need native libraries as in §3.2.)
 - **`MKDOCS_ENABLE_PDF=1`**: builds `site/pdf/Agentic-Design-Patterns-CN.pdf`. Do **not** use `mkdocs build --strict` here: in strict mode, `mkdocs-with-pdf` counts WeasyPrint log lines as fatal errors, and Material’s CSS triggers thousands of them even when the PDF file is produced.
 
-GitHub Actions runs a strict build with PDF disabled, then a second build with PDF enabled and `--no-strict`.
+GitHub Actions runs a strict build with `mkdocs-strict.yml`, then a second build with PDF enabled and `--no-strict`.
 
 ## 1. Preview the website locally
 
@@ -31,8 +31,8 @@ python3 -m mkdocs serve
 
 ```bash
 python3 scripts/generate_mkdocs_nav.py
-# Strict check, HTML only (no PDF)
-MKDOCS_ENABLE_PDF=0 python3 -m mkdocs build --strict
+# Strict check, HTML only (no PDF plugin loaded)
+python3 -m mkdocs build --strict -f mkdocs-strict.yml
 
 # Full site including PDF (omit --strict; see “PDF plugin switch” above)
 MKDOCS_ENABLE_PDF=1 python3 -m mkdocs build

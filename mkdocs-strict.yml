@@ -1,0 +1,9 @@
+INHERIT: mkdocs.yml
+
+# Strict CI build must avoid loading `mkdocs-with-pdf` entirely, because
+# `enabled_if_env` still imports the plugin and can emit warnings/errors.
+plugins:
+  - search:
+      lang:
+        - zh
+        - en

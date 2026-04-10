@@ -26,8 +26,8 @@ plugins:
       lang:
         - zh
         - en
-  # PDF generation toggled via MKDOCS_ENABLE_PDF=1 so CI can run `mkdocs build --strict`
-  # without mkdocs-with-pdf counting thousands of WeasyPrint CSS errors (Material theme).
+  # PDF generation is toggled via MKDOCS_ENABLE_PDF=1 for the deploy build.
+  # Strict CI uses `mkdocs-strict.yml` so `mkdocs-with-pdf` is not imported at all.
   - with-pdf:
       enabled_if_env: MKDOCS_ENABLE_PDF
       output_path: pdf/Agentic-Design-Patterns-CN.pdf

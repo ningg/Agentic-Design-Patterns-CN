@@ -35,12 +35,10 @@ jobs:
       - name: Generate mkdocs nav
         run: python scripts/generate_mkdocs_nav.py
 
-      # Strict MkDocs check without PDF: mkdocs-with-pdf ties "strict" to WeasyPrint ERROR
-      # logs; Material's CSS triggers thousands of them and fails the job after PDF succeeds.
+      # Strict MkDocs check must use a config that does not load `with-pdf` at all.
+      # `enabled_if_env` still imports the plugin, which can emit warnings/errors and fail `--strict`.
       - name: Strict build check (no PDF)
-        env:
-          MKDOCS_ENABLE_PDF: "0"
-        run: mkdocs build --strict
+        run: mkdocs build --strict -f mkdocs-strict.yml
 
       - name: Build site with PDF for Pages
         env:
