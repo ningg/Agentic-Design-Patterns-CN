@@ -1,8 +1,5 @@
 # Agentic Design Patterns
 
-This repository contains the full text of the book "Agentic Design Patterns" by Antonio Gulli and Mauro Sauco. The content has been compiled and organized by Tom Mathews  for easy access and reference for the community.
-
-> 本仓库收录 Antonio Gulli 与 Mauro Sauco 所著《Agentic Design Patterns》全书正文；内容由 Tom Mathews 整理编排，供社区查阅与参考。
 
 <p align="center">
   <img src="assets-new/Agentic_Design_Patterns_Book_Cover_CN.png" alt="Agentic Design Patterns CN Cover" width="280" />
@@ -12,10 +9,10 @@ This repository contains the full text of the book "Agentic Design Patterns" by 
 
 ## Authorship and Credit
 
-- **Authors:** [Antonio Gulli](https://www.linkedin.com/in/searchguy/) and [Mauro Sauco](https://www.linkedin.com/in/maurosauco/)
+- **Authors:** [Antonio Gulli](https://www.linkedin.com/in/searchguy/) 
 - **Compiled by:** [ningg@GitHub](https://github.com/ningg)
 
-> - **作者：** [Antonio Gulli](https://www.linkedin.com/in/searchguy/) 与 [Mauro Sauco](https://www.linkedin.com/in/maurosauco/)
+> - **作者：** [Antonio Gulli](https://www.linkedin.com/in/searchguy/) 
 > - **翻译：** [ningg@GitHub](https://github.com/ningg)
 
 ### What makes this book stand out?
