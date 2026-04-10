@@ -344,8 +344,35 @@ This project provides a full-stack application featuring a React frontend and a 
 
 > 仓库里是一个 React + LangGraph 的全栈样例，偏「高阶检索 + 对话式研究」场景。图里的智能体会调用 Gemini 动态改写检索 query，经 Google Search API 拉网页；再用反思节点找知识空洞，多轮补搜，最后拼出带来源引用的答案。前后端都支持热更新，代码分 `frontend/` 与 `backend/`。本地开发需要 Node.js、npm、Python 3.8+ 以及 Gemini API Key（写在 backend 的 `.env`）；依赖分别用 `pip install .` 与 `npm install` 安装，可用 `make dev` 一键起双端。智能体拓扑在 `backend/src/agent/graph.py`：从生成查询、联网检索、反思评估，到必要时回到检索或进入终稿节点。若要模拟生产形态，后端会托管打包后的静态前端，并依赖 Redis（流式输出）与 Postgres（状态/数据）；`docker-compose up` 可起全套，示例 `docker-compose.yml` 里还预留了 LangSmith Key。技术栈包括 React、Vite、Tailwind、Shadcn UI、LangGraph、Gemini；许可证为 Apache 2.0。
 
-| ``# Create our Agent Graph builder = StateGraph(OverallState, config_schema=Configuration) # Define the nodes we will cycle between builder.add_node("generate_query", generate_query) builder.add_node("web_research", web_research) builder.add_node("reflection", reflection) builder.add_node("finalize_answer", finalize_answer) # Set the entrypoint as `generate_query` # This means that this node is the first one called builder.add_edge(START, "generate_query") # Add conditional edge to continue with search queries in a parallel branch builder.add_conditional_edges(    "generate_query", continue_to_web_research, ["web_research"] ) # Reflect on the web research builder.add_edge("web_research", "reflection") # Evaluate the research builder.add_conditional_edges(    "reflection", evaluate_research, ["web_research", "finalize_answer"] ) # Finalize the answer builder.add_edge("finalize_answer", END) graph = builder.compile(name="pro-search-agent")`` |
-| :---- |
+```python
+# Create our Agent 
+Graph builder = StateGraph(OverallState, config_schema=Configuration)
+# Define the nodes we will cycle between
+builder.add_node("generate_query", generate_query)
+builder.add_node("web_research", web_research)
+builder.add_node("reflection", reflection)
+builder.add_node("finalize_answer", finalize_answer)
+# Set the entrypoint as `generate_query`
+# This means that this node is the first one called
+builder.add_edge(START, "generate_query")
+# Add conditional edge to continue with search queries in a parallel branch
+builder.add_conditional_edges(
+    "generate_query",
+    continue_to_web_research,
+    ["web_research"]
+)
+# Reflect on the web research
+builder.add_edge("web_research", "reflection")
+# Evaluate the research
+builder.add_conditional_edges(
+    "reflection",
+    evaluate_research,
+    ["web_research", "finalize_answer"]
+)
+# Finalize the answer
+builder.add_edge("finalize_answer", END)
+graph = builder.compile(name="pro-search-agent")
+```
 
 Fig.4: Example of DeepSearch with LangGraph (code from backend/src/agent/graph.py)
 

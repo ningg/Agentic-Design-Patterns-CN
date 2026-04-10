@@ -1,4 +1,5 @@
 .venv/
+.venv-docs/
 __pycache__/
 cn/.translation-cache*.json
 .worktrees/
