@@ -8,6 +8,15 @@ The MkDocs config is in `mkdocs.yml`, and the PDF plugin writes to:
 site/pdf/Agentic-Design-Patterns-CN.pdf
 ```
 
+## PDF plugin switch (`MKDOCS_ENABLE_PDF`)
+
+`mkdocs.yml` sets `enabled_if_env: MKDOCS_ENABLE_PDF`. The PDF plugin runs only when this variable is `1`:
+
+- **`MKDOCS_ENABLE_PDF` unset or `0`**: skips PDF rendering (faster; no WeasyPrint layout pass). You can run `mkdocs build --strict` without `mkdocs-with-pdf` counting WeasyPrint log lines as build failures. (The package still imports WeasyPrint; on macOS you still need native libraries as in §3.2.)
+- **`MKDOCS_ENABLE_PDF=1`**: builds `site/pdf/Agentic-Design-Patterns-CN.pdf`. Do **not** use `mkdocs build --strict` here: in strict mode, `mkdocs-with-pdf` counts WeasyPrint log lines as fatal errors, and Material’s CSS triggers thousands of them even when the PDF file is produced.
+
+GitHub Actions runs a strict build with PDF disabled, then a second build with PDF enabled and `--no-strict`.
+
 ## 1. Preview the website locally
 
 Run the following commands from the repository root:
@@ -22,7 +31,11 @@ python3 -m mkdocs serve
 
 ```bash
 python3 scripts/generate_mkdocs_nav.py
-python3 -m mkdocs build --strict
+# Strict check, HTML only (no PDF)
+MKDOCS_ENABLE_PDF=0 python3 -m mkdocs build --strict
+
+# Full site including PDF (omit --strict; see “PDF plugin switch” above)
+MKDOCS_ENABLE_PDF=1 python3 -m mkdocs build
 ```
 
 ## 3. Export PDF on macOS
@@ -54,7 +67,7 @@ ln -sf /opt/homebrew/lib/libpangoft2-1.0.dylib /Users/guoning/anaconda3/lib/libp
 
 ```bash
 DYLD_FALLBACK_LIBRARY_PATH="/Users/guoning/anaconda3/lib:/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH" \
-./.venv-docs/bin/python -m mkdocs build
+MKDOCS_ENABLE_PDF=1 ./.venv-docs/bin/python -m mkdocs build
 ```
 
 Generated file:
@@ -132,7 +145,7 @@ Then rerun:
 
 ```bash
 DYLD_FALLBACK_LIBRARY_PATH="/Users/guoning/anaconda3/lib:/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH" \
-./.venv-docs/bin/python -m mkdocs build
+MKDOCS_ENABLE_PDF=1 ./.venv-docs/bin/python -m mkdocs build
 ```
 
 This repository includes `.github/workflows/deploy-docs.yml`, which deploys the site to GitHub Pages on every push to `main`.
@@ -146,6 +159,15 @@ This repository includes `.github/workflows/deploy-docs.yml`, which deploys the 
 > ```text
 > site/pdf/Agentic-Design-Patterns-CN.pdf
 > ```
+>
+> ## PDF 插件开关（`MKDOCS_ENABLE_PDF`）
+>
+> `mkdocs.yml` 中配置了 `enabled_if_env: MKDOCS_ENABLE_PDF`，仅当该环境变量为 `1` 时才生成 PDF：
+>
+> - **未设置或为 `0`**：不执行 PDF 排版导出（更快；也不会把 WeasyPrint 日志当成构建失败）。可用 `mkdocs build --strict` 做 MkDocs 严格检查。（插件仍会 import WeasyPrint；macOS 上仍需 §3.2 的本机库。）
+> - **`MKDOCS_ENABLE_PDF=1`**：生成 `site/pdf/Agentic-Design-Patterns-CN.pdf`。请勿与 `mkdocs build --strict` 同时使用：严格模式下 `mkdocs-with-pdf` 会把 WeasyPrint 的日志计为致命错误，Material 主题的 CSS 会产生数千条。
+>
+> GitHub Actions 会先做一次关闭 PDF 的 `--strict` 构建，再单独做一次带 PDF 且 `--no-strict` 的构建。
 >
 > ## 1. 本地预览网站
 >
@@ -161,7 +183,8 @@ This repository includes `.github/workflows/deploy-docs.yml`, which deploys the 
 >
 > ```bash
 > python3 scripts/generate_mkdocs_nav.py
-> python3 -m mkdocs build --strict
+> MKDOCS_ENABLE_PDF=0 python3 -m mkdocs build --strict
+> MKDOCS_ENABLE_PDF=1 python3 -m mkdocs build
 > ```
 >
 > ## 3. 在 macOS 上导出 PDF
@@ -193,7 +216,7 @@ This repository includes `.github/workflows/deploy-docs.yml`, which deploys the 
 >
 > ```bash
 > DYLD_FALLBACK_LIBRARY_PATH="/Users/guoning/anaconda3/lib:/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH" \
-> ./.venv-docs/bin/python -m mkdocs build
+> MKDOCS_ENABLE_PDF=1 ./.venv-docs/bin/python -m mkdocs build
 > ```
 >
 > 输出文件：
@@ -271,7 +294,7 @@ This repository includes `.github/workflows/deploy-docs.yml`, which deploys the 
 >
 > ```bash
 > DYLD_FALLBACK_LIBRARY_PATH="/Users/guoning/anaconda3/lib:/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH" \
-> ./.venv-docs/bin/python -m mkdocs build
+> MKDOCS_ENABLE_PDF=1 ./.venv-docs/bin/python -m mkdocs build
 > ```
 >
 > 仓库已包含 `.github/workflows/deploy-docs.yml`，推送到 `main` 分支后会自动发布到 GitHub Pages。

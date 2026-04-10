@@ -35,8 +35,17 @@ jobs:
       - name: Generate mkdocs nav
         run: python scripts/generate_mkdocs_nav.py
 
-      - name: Build site
+      # Strict MkDocs check without PDF: mkdocs-with-pdf ties "strict" to WeasyPrint ERROR
+      # logs; Material's CSS triggers thousands of them and fails the job after PDF succeeds.
+      - name: Strict build check (no PDF)
+        env:
+          MKDOCS_ENABLE_PDF: "0"
         run: mkdocs build --strict
+
+      - name: Build site with PDF for Pages
+        env:
+          MKDOCS_ENABLE_PDF: "1"
+        run: mkdocs build --no-strict
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
