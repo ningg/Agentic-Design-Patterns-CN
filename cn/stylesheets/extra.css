@@ -20,10 +20,17 @@ body,
   padding-bottom: 3lh;
 }
 
-/* Make blockquote text and border teal instead of gray. */
+/* Match Material's selector specificity so the quote border override wins. */
+[dir="ltr"] .md-typeset blockquote {
+  border-left-color: #faad14;
+}
+
+[dir="rtl"] .md-typeset blockquote {
+  border-right-color: #faad14;
+}
+
 .md-typeset blockquote {
-  border-left-color: #14b8a6;
-  color: #0f766e;
+  color: #c47d1a;
 }
 
 .md-typeset blockquote > :first-child {
