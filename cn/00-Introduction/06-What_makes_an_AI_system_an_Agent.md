@@ -44,6 +44,13 @@ Before doing that, let's examine examples that span the range of agent complexit
 
 > 在此之前，先浏览覆盖智能体复杂度谱系的示例（见图 3）。
 
+
+![Various Instances Demonstrating the Spectrum of Agent Complexity](../assets-new/Various_Instances_Demonstrating_the_Spectrum_of_Agent_Complexity.png)
+
+Fig. 3: Various instances demonstrating the spectrum of agent complexity.
+
+> 图 3：若干实例，展示智能体复杂度的谱系。
+
 ## Level 0: The Core Reasoning Engine
 
 While an LLM is not an agent in itself, it can serve as the reasoning core of a basic agentic system. In a 'Level 0' configuration, the LLM operates without tools, memory, or environment interaction, responding solely based on its pretrained knowledge. Its strength lies in leveraging its extensive training data to explain established concepts. The trade-off for this powerful internal reasoning is a complete lack of current-event awareness. For instance, it would be unable to name the 2025 Oscar winner for "Best Picture" if that information is outside its pre-trained knowledge.
@@ -64,7 +71,7 @@ For instance, to find new TV shows, the agent recognizes the need for current in
 
 At this level, an agent's capabilities expand significantly, encompassing strategic planning, proactive assistance, and self-improvement, with prompt engineering and context engineering as core enabling skills.
 
-> 在这一层，智能体能力显著扩展，覆盖战略规划、主动协助与自我改进；提示工程与上下文工程是关键的使能技能。
+> 在这一层，智能体能力显著扩展，覆盖战略规划、主动协助与自我改进；`提示工程`与`上下文工程`是关键的使能技能(`基础能力`)。
 
 First, the agent moves beyond single-tool use to tackle complex, multi-part problems through strategic problem-solving. As it executes a sequence of actions, it actively performs context engineering: the strategic process of selecting, packaging, and managing the most relevant information for each step. For example, to find a coffee shop between two locations, it first uses a mapping tool. It then engineers this output, curating a short, focused context—perhaps just a list of street names—to feed into a local search tool, preventing cognitive overload and ensuring the second step is efficient and accurate. To achieve maximum accuracy from an AI, it must be given a short, focused, and powerful context. Context engineering is the discipline that accomplishes this by strategically selecting, packaging, and managing the most critical information from all available sources. It effectively curates the model's limited attention to prevent overload and ensure high-quality, efficient performance on any given task. For detailed information, refer to the Appendix A\.
 
@@ -76,17 +83,12 @@ This level leads to proactive and continuous operation. A travel assistant linke
 
 In specialized fields like software engineering, the agent manages an entire workflow by applying this discipline. When assigned a bug report, it reads the report and accesses the codebase, then strategically engineers these large sources of information into a potent, focused context that allows it to efficiently write, test, and submit the correct code patch.
 
-> 在软件工程等专业场景，智能体以同一套方法学贯穿整条工作流：读取缺陷报告与代码库后，将庞杂信息策略性地工程化，凝聚成强而聚焦的上下文，从而高效编写、测试并提交正确补丁。
+> 在软件工程等专业场景中，智能体也用同样的方法贯穿整个工作流：接到缺陷报告后，它会读取报告、访问代码库，再把这些庞杂信息经过策略性处理，整理成有力而聚焦的上下文，从而高效地编写、测试并提交正确的补丁。
 
 Finally, the agent achieves self-improvement by refining its own context engineering processes. When it asks for feedback on how a prompt could have been improved, it is learning how to better curate its initial inputs. This allows it to automatically improve how it packages information for future tasks, creating a powerful, automated feedback loop that increases its accuracy and efficiency over time. For detailed information, refer to Chapter 17\.
 
-> 最后，智能体可通过打磨自身上下文工程流程实现自我改进：当它征求「提示应如何改写」的反馈时，实质在学习如何更好地策展初始输入，并自动优化未来任务中的信息封装，从而形成强有力的自动化反馈闭环，随时间提升准确度与效率。详见第 17 章。
+> 最后，智能体还能通过持续打磨自身的上下文工程流程来实现自我改进：当它主动征求「提示还能如何改写」的反馈时，本质上是在学习怎样更好地组织初始输入，并自动优化未来任务中的信息打包方式，从而形成强有力的自动化反馈闭环，随着时间推移不断提升准确度与效率。详见第 17 章。
 
-![Various Instances Demonstrating the Spectrum of Agent Complexity](../assets-new/Various_Instances_Demonstrating_the_Spectrum_of_Agent_Complexity.png)
-
-Fig. 3: Various instances demonstrating the spectrum of agent complexity.
-
-> 图 3：若干实例，展示智能体复杂度的谱系。
 
 ## Level 3: The Rise of Collaborative Multi-Agent Systems
 
@@ -108,27 +110,29 @@ AI agent development is progressing at an unprecedented pace across domains such
 
 > 智能体开发在软件自动化、科学研究、客户服务等领域正以空前速度推进。今天的系统虽已亮眼，却只是序幕。下一波创新或将集中在：提升可靠性、强化协作、以及把智能体更深地嵌入日常生活。以下是与「下一步」相关的五条主流假设（见图 4）。
 
-### Hypothesis 1: The Emergence of the Generalist Agent
-
-The first hypothesis is that AI agents will evolve from narrow specialists into true generalists capable of managing complex, ambiguous, and long-term goals with high reliability. For instance, you could give an agent a simple prompt like, "Plan my company's offsite retreat for 30 people in Lisbon next quarter." The agent would then manage the entire project for weeks, handling everything from budget approvals and flight negotiations to venue selection and creating a detailed itinerary from employee feedback, all while providing regular updates. Achieving this level of autonomy will require fundamental breakthroughs in AI reasoning, memory, and near-perfect reliability. An alternative, yet not mutually exclusive, approach is the rise of Small Language Models (SLMs). This "Lego-like" concept involves composing systems from small, specialized expert agents rather than scaling up a single monolithic model. This method promises systems that are cheaper, faster to debug, and easier to deploy. Ultimately, the development of large generalist models and the composition of smaller specialized ones are both plausible paths forward, and they could even complement each other.
-
-> 假设一：智能体将从「窄域专才」演化为能高可靠地驾驭复杂、模糊、长期目标的真正通才。例如你可下达：「为 30 人规划下季度在里斯本的公司团建。」智能体或可数周操盘全案——预算审批、机票磋商、场地遴选，以及基于员工反馈迭代详细行程，并持续同步进展。这种级别的自主，依赖推理、记忆与近乎完美可靠性上的根本性突破。另一条并行路径（与前者不互斥）是小语言模型（SLM）崛起：以「乐高式」的小型专精智能体拼装系统，而非一味堆叠单一巨型模型，有望更经济、更易排错、更易部署。大通才模型与小模型组合都是可行路线，亦可相互补强。
-
-### Hypothesis 2: Deep Personalization and Proactive Goal Discovery
-
-The second hypothesis posits that agents will become deeply personalised and proactive partners. We are witnessing the emergence of a new class of agent: the proactive partner. By learning from your unique patterns and goals, these systems are beginning to shift from just following orders to anticipating your needs. AI systems operate as agents when they move beyond simply responding to chats or instructions. They initiate and execute tasks on behalf of the user, actively collaborating in the process.  This moves beyond simple task execution into the realm of proactive goal discovery.
-
-> 假设二：智能体将进化为深度个性化、能主动出击的伙伴。我们正看到「主动伙伴」这一新品类：借由学习你的行为模式与目标，系统从「唯命是从」走向「预判所需」。当 AI 不再止于回复聊天或执行指令，而是代表用户发起并完成任务、在协作中主动补位时，它才真正以智能体的方式运转——这也从单纯「干活」迈向「主动发现目标」的新阶段。
-
-For instance, if you're exploring sustainable energy, the agent might identify your latent goal and proactively support it by suggesting courses or summarizing research. While these systems are still developing, their trajectory is clear. They will become increasingly proactive, learning to take initiative on your behalf when highly confident that the action will be helpful. Ultimately, the agent becomes an indispensable ally, helping you discover and achieve ambitions you have yet to fully articulate.
-
-> 例如当你研究可持续能源时，智能体可能察觉潜在意图，主动推荐课程或汇总研究进展。相关系统仍在演进，但方向明确：它们将更主动，在高度确信某项行动对你有益时替你出手。最终，智能体或可成为不可或缺的盟友，协助你发掘并实现那些尚未被清晰表述的志向。
 
 ![Five Hypotheses about the Future of Agents](../assets-new/Five_Hypotheses_about_the_Future_of_Agents.png)
 
 Fig. 4: Five hypotheses about the future of agents
 
 > 图 4：关于智能体未来的五条假设
+
+### Hypothesis 1: The Emergence of the Generalist Agent
+
+The first hypothesis is that AI agents will evolve from narrow specialists into true generalists capable of managing complex, ambiguous, and long-term goals with high reliability. For instance, you could give an agent a simple prompt like, "Plan my company's offsite retreat for 30 people in Lisbon next quarter." The agent would then manage the entire project for weeks, handling everything from budget approvals and flight negotiations to venue selection and creating a detailed itinerary from employee feedback, all while providing regular updates. Achieving this level of autonomy will require fundamental breakthroughs in AI reasoning, memory, and near-perfect reliability. An alternative, yet not mutually exclusive, approach is the rise of Small Language Models (SLMs). This "Lego-like" concept involves composing systems from small, specialized expert agents rather than scaling up a single monolithic model. This method promises systems that are cheaper, faster to debug, and easier to deploy. Ultimately, the development of large generalist models and the composition of smaller specialized ones are both plausible paths forward, and they could even complement each other.
+
+> 假设一：智能体将从狭窄领域的专才，演进为真正的通才，能够以较高可靠性处理复杂、模糊且周期较长的目标。例如，你只需给它一个简单提示：「为公司规划一次下季度在里斯本举行、30 人参加的团建活动。」随后，智能体就可能在数周内接手整个项目，处理从预算审批、机票谈判、场地选择，到根据员工反馈制定详细行程等各项事务，并持续同步进展。要实现这种程度的自主性，仍有赖于 AI 在推理、记忆和接近完美的可靠性方面取得根本性突破。另一条可并行推进、且并不与之冲突的路径，是小语言模型（SLM）的兴起。这种类似「乐高拼装」的思路，不是继续扩张单一的大一统模型，而是用多个小型、专精的专家智能体来组合系统。这样的方法有望让系统更便宜、更容易调试，也更容易部署。归根结底，发展大型通才模型和组合小型专精模型，都是合理可行的方向，而且二者还有可能彼此互补。
+
+### Hypothesis 2: Deep Personalization and Proactive Goal Discovery
+
+The second hypothesis posits that agents will become deeply personalised and proactive partners. We are witnessing the emergence of a new class of agent: the proactive partner. By learning from your unique patterns and goals, these systems are beginning to shift from just following orders to anticipating your needs. AI systems operate as agents when they move beyond simply responding to chats or instructions. They initiate and execute tasks on behalf of the user, actively collaborating in the process.  This moves beyond simple task execution into the realm of proactive goal discovery.
+
+> 假设二：智能体将演进为高度个性化、具备主动性的伙伴。我们正见证一种新型智能体的出现：「主动型伙伴」。这类系统会学习你独有的行为模式和目标，逐步从被动执行指令，转向主动预判你的需求。当 AI 不再只是回应对话或照着指令做事，而是能够代表用户发起并执行任务，并在过程中积极协作时，它才真正以智能体的方式运转。这也意味着，它已从单纯执行任务，迈向主动发现目标的新阶段。
+
+For instance, if you're exploring sustainable energy, the agent might identify your latent goal and proactively support it by suggesting courses or summarizing research. While these systems are still developing, their trajectory is clear. They will become increasingly proactive, learning to take initiative on your behalf when highly confident that the action will be helpful. Ultimately, the agent becomes an indispensable ally, helping you discover and achieve ambitions you have yet to fully articulate.
+
+> 例如当你研究可持续能源时，智能体可能察觉潜在意图，主动推荐课程或汇总研究进展。相关系统仍在演进，但方向明确：它们将更主动，在高度确信某项行动对你有益时替你出手。最终，智能体或可成为不可或缺的盟友，协助你发掘并实现那些尚未被清晰表述的志向。
+
 
 ### Hypothesis 3: Embodiment and Physical World Interaction
 
@@ -160,7 +164,7 @@ This system would be a dynamic entity, not a single agent. It would have the abi
 
 For instance, an entrepreneur would simply declare the intent: "Launch a successful e-commerce business selling artisanal coffee." The system, without further programming, would spring into action. It might initially spawn a "Market Research" agent and a "Branding" agent. Based on the initial findings, it could decide to remove the branding agent and spawn three new specialized agents: a "Logo Design" agent, a "Webstore Platform" agent, and a "Supply Chain" agent. It would constantly tune their internal prompts for better performance. If the webstore agent becomes a bottleneck, the system might duplicate it into three parallel agents to work on different parts of the site, effectively re-architecting its own structure on the fly to best achieve the declared goal.
 
-> 例如创业者仅声明意图：「成功启动一家销售手工咖啡的电商。」系统无需额外手写程序即可自举：可能先孵化「市场研究」与「品牌」智能体；待首轮结果回传，又可能裁撤品牌角色，改派「Logo 设计」「网店平台」「供应链」三支专精智能体，并持续微调内部提示。若网店智能体成为瓶颈，系统可将其复制为三份并行实例，分别攻坚站点不同模块——实质是在飞行中重构自身拓扑，以逼近声明的目标。
+> 例如，创业者只需声明一个意图：「打造一家成功销售手工咖啡的电商业务」。系统无需再额外编程，便会立即开始运作：它可能先生成「市场研究」和「品牌建设」两个智能体；根据初步结果，又可能撤下品牌建设智能体，转而生成三个新的专精智能体，分别负责「Logo 设计」「网店平台」和「供应链」。同时，系统还会持续调整它们的内部提示，以提升整体表现。若负责网店的智能体成为瓶颈，系统还可能将其复制为三个并行智能体，分别处理网站的不同部分。也就是说，它会在运行过程中动态重组自身结构，以更好地实现既定目标。
 
 ## Conclusion
 

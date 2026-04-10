@@ -18,9 +18,9 @@ Building effectively on this agentic canvas demands more than just throwing comp
 
 ## What are Agentic Systems?
 
-At its core, an agentic system is a computational entity designed to perceive its environment (both digital and potentially physical), make informed decisions based on those perceptions and a set of predefined or learned goals, and execute actions to achieve those goals autonomously. Unlike traditional software, which follows rigid, step-by-step instructions, agents exhibit a degree of flexibility and initiative.
+At its core, an agentic system is a computational entity designed to perceive its environment (both digital and potentially physical), make informed decisions based on those perceptions and a set of predefined or learned goals, and execute actions to achieve those goals autonomously. Unlike traditional software, which follows rigid, step-by-step instructions, agents exhibit a degree of `flexibility` and `initiative`.
 
-> 本质上，智能体化系统是一种计算实体：感知环境（数字环境，以及可能的物理环境），在感知与一组预设或习得的目标基础上做出知情决策，并自主执行行动以达成目标。与传统软件遵循僵硬的逐步指令不同，智能体展现出一定的灵活性与主动性。
+> 本质上，智能体系统（`Agentic System`）是一种计算实体：感知环境（数字环境，以及可能的物理环境），在感知与一组预设或习得的目标基础上做出知情决策，并自主行动以达成目标。与传统软件遵循僵硬的逐步指令不同，智能体展现出一定的`灵活性`与`主动性`。
 
 Imagine you need a system to manage customer inquiries. A traditional system might follow a fixed script. An agentic system, however, could perceive the nuances of a customer's query, access knowledge bases, interact with other internal systems (like order management), potentially ask clarifying questions, and proactively resolve the issue, perhaps even anticipating future needs. These agents operate on the canvas of your application's infrastructure, utilizing the services and data available to them.
 
