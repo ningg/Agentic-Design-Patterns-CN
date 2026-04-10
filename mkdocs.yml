@@ -1,6 +1,7 @@
 site_name: Agentic Design Patterns - 智能体设计模式 (中英文版本)
 site_description: Agentic Design Patterns 中英文版，智能体设计模式
 site_author: ningg@GitHub
+copyright: https://ningg.top/Agentic-Design-Patterns-CN
 site_url: http://ningg.top/Agentic-Design-Patterns-CN
 repo_url: https://github.com/ningg/Agentic-Design-Patterns-CN
 docs_dir: cn
@@ -29,6 +30,7 @@ plugins:
       output_path: pdf/Agentic-Design-Patterns-CN.pdf
       toc_level: 2
       ordered_chapter_level: 0
+      cover_subtitle: A Hands-On Guide to Building Intelligent Systems , 构建智能系统的实践指南
       custom_template_path: pdf-template
 
 markdown_extensions:
