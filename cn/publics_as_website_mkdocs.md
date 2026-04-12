@@ -19,12 +19,29 @@ GitHub Actions runs a strict build with `mkdocs-strict.yml`, then a second build
 
 ## 1. Preview the website locally
 
-Run the following commands from the repository root:
+From the repository root, run:
 
 ```bash
-python3 -m pip install -r requirements-docs.txt
-python3 scripts/generate_mkdocs_nav.py
-python3 -m mkdocs serve
+bash scripts/docs-serve.sh
+```
+
+The script will:
+
+- create or reuse the local `.venv`
+- install `requirements-docs.txt`
+- regenerate MkDocs navigation
+- start `mkdocs serve` with `mkdocs-strict.yml` for hot reload without loading the PDF plugin
+
+Default address:
+
+```text
+http://127.0.0.1:8000/Agentic-Design-Patterns-CN/
+```
+
+Optional: override the bind address or port:
+
+```bash
+MKDOCS_DEV_ADDR=0.0.0.0:8001 bash scripts/docs-serve.sh
 ```
 
 ## 2. Build the static website
@@ -174,9 +191,26 @@ This repository includes `.github/workflows/deploy-docs.yml`, which deploys the 
 > 在仓库根目录执行：
 >
 > ```bash
-> python3 -m pip install -r requirements-docs.txt
-> python3 scripts/generate_mkdocs_nav.py
-> python3 -m mkdocs serve
+> bash scripts/docs-serve.sh
+> ```
+>
+> 该脚本会自动：
+>
+> - 创建或复用本地 `.venv`
+> - 安装 `requirements-docs.txt`
+> - 重新生成 MkDocs 导航
+> - 使用 `mkdocs-strict.yml` 启动热更新预览，避免加载 PDF 插件
+>
+> 默认访问地址：
+>
+> ```text
+> http://127.0.0.1:8000/Agentic-Design-Patterns-CN/
+> ```
+>
+> 如需自定义监听地址或端口，可执行：
+>
+> ```bash
+> MKDOCS_DEV_ADDR=0.0.0.0:8001 bash scripts/docs-serve.sh
 > ```
 >
 > ## 2. 构建静态网站
