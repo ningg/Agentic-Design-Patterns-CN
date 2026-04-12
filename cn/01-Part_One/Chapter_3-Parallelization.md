@@ -8,11 +8,17 @@
 
 In the previous chapters, we've explored Prompt Chaining for sequential workflows and Routing for dynamic decision-making and transitions between different paths. While these patterns are essential, many complex agentic tasks involve multiple sub-tasks that can be executed *simultaneously* rather than one after another. This is where the **Parallelization** pattern becomes crucial.
 
-> 前几章介绍了顺序工作流中的提示链，以及用于动态决策与路径切换的路由。二者都很重要，但许多复杂的智能体任务包含多个可以*同时*推进、而非逐项串行执行的子任务——这时，**并行化**就尤为关键。
+> 前几章介绍了顺序工作流中的`提示链`(Prompt Chaining)，以及用于动态决策与路径切换的`路由`(Routing)。二者都很重要，但许多复杂的智能体任务包含多个可以 `同时` (concurrently) 推进、而非逐项串行执行的子任务——这时，**并行化** (Parallelization) 就尤为关键。
 
 Parallelization involves executing multiple components, such as LLM calls, tool usages, or even entire sub-agents, concurrently (see Fig.1). Instead of waiting for one step to complete before starting the next, parallel execution allows independent tasks to run at the same time, significantly reducing the overall execution time for tasks that can be broken down into independent parts.
 
-> 并行化即并发运行多个组件：LLM 调用、工具使用乃至整条子智能体链路（见图 1）。不必等上一步结束再开下一步；彼此独立的任务可同时推进，从而显著压缩那些能拆成并行块的任务的总耗时。
+> 并行化即并发运行多个组件：LLM 调用、工具使用，乃至多个完整的子智能体（见图 1）。不必等上一步结束再开下一步；彼此独立的任务可同时推进，从而显著压缩那些能够拆分为独立并行部分的任务的总耗时。
+
+![Parallelization with Sub-Agents](../assets-new/Parallelization_with_Sub_Agents.png)
+
+Fig.1. Example of parallelization with sub-agents
+
+> 图 1. 子智能体并行化示例
 
 Consider an agent designed to research a topic and summarize its findings. A sequential approach might:
 
@@ -38,23 +44,18 @@ A parallel approach could instead:
 2. Once both searches are complete, Summarize Source A *and* Summarize Source B simultaneously.  
 3. Synthesize a final answer from summaries A and B (this step is typically sequential, waiting for the parallel steps to finish).
 
-> 1. *同时*检索来源 A 与来源 B。
-> 2. 两次检索均完成后，*同时*总结来源 A 与来源 B。
+> 1. `同时` 检索来源 A 与来源 B。
+> 2. 两次检索均完成后，`同时` 总结来源 A 与来源 B。
 > 3. 再据摘要 A、B 综合最终答案（这一步一般仍须串行，需等并行阶段全部结束）。
 
 The core idea is to identify parts of the workflow that do not depend on the output of other parts and execute them in parallel. This is particularly effective when dealing with external services (like APIs or databases) that have latency, as you can issue multiple requests concurrently.
 
-> 核心在于识别工作流中那些不依赖其他步骤即时输出的环节，并将它们并行执行。面对 API、数据库等天然存在时延的外部服务时，这种做法尤其划算：可以一次性并发发起多条请求。
+> 核心在于识别工作流中那些不依赖其他步骤即时输出的环节，并将它们并行执行。当任务涉及 API、数据库等本身就有往返延迟的外部服务时，这种做法尤为有效：可以一次性并发发起多条请求。
 
 Implementing parallelization often requires frameworks that support asynchronous execution or multi-threading/multi-processing. Modern agentic frameworks are designed with asynchronous operations in mind, allowing you to easily define steps that can run in parallel.
 
-> 落地并行化往往需要框架支持异步执行，或多线程/多进程。当代智能体框架多按异步思路设计，定义可并行步骤也相对顺手。
+> 落地并行化往往需要框架支持异步执行，或多线程/多进程。当代智能体框架普遍面向异步设计，定义可并行执行的步骤也更为顺手。
 
-![Parallelization with Sub-Agents](../assets-new/Parallelization_with_Sub_Agents.png)
-
-Fig.1. Example of parallelization with sub-agents
-
-> 图 1. 子智能体并行化示例
 
 Frameworks like LangChain, LangGraph, and Google ADK provide mechanisms for parallel execution. In LangChain Expression Language (LCEL), you can achieve parallel execution by combining runnable objects using operators like | (for sequential) and by structuring your chains or graphs to have branches that execute concurrently. LangGraph, with its graph structure, allows you to define multiple nodes that can be executed from a single state transition, effectively enabling parallel branches in the workflow. Google ADK provides robust, native mechanisms to facilitate and manage the parallel execution of agents, significantly enhancing the efficiency and scalability of complex, multi-agent systems. This inherent capability within the ADK framework allows developers to design and implement solutions where multiple agents can operate concurrently, rather than sequentially.
 
@@ -62,7 +63,7 @@ Frameworks like LangChain, LangGraph, and Google ADK provide mechanisms for para
 
 The Parallelization pattern is vital for improving the efficiency and responsiveness of agentic systems, especially when dealing with tasks that involve multiple independent lookups, computations, or interactions with external services. It's a key technique for optimizing the performance of complex agent workflows.
 
-> 并行化能明显提升智能体系统的效率与响应速度，在多次独立查询、并行计算或同时打多条外部接口时尤其明显，是复杂工作流里常用的性能杠杆。
+> 并行化能明显提升智能体系统的效率与响应速度，在多次独立查询、并行计算或同时调用多条外部接口时尤其明显，是复杂工作流中常用的性能优化手段。
 
 ## Practical Applications & Use Cases
 
@@ -94,7 +95,7 @@ Collecting information from multiple sources simultaneously is a classic use cas
 
 Applying different analysis techniques or processing different data segments concurrently.
 
-> 对不同数据块并行套用不同分析手法，或分段处理。
+> 对不同数据片段并行采用不同分析方法，或对同一批数据并行运行多种分析。
 
 * **Use Case:** An agent analyzing customer feedback.  
   * **Parallel Tasks:** Run sentiment analysis, extract keywords, categorize feedback, and identify urgent issues simultaneously across a batch of feedback entries.  
@@ -166,7 +167,7 @@ Processing different modalities (text, image, audio) of the same input concurren
 
 > * **用例：** 分析同时包含文字与图片的社交媒体帖子的智能体。
 >   * **并行任务：** *同时*对文本进行情感与关键词分析，*并*对图像进行物体识别与场景描述分析。
->   * **收益：** 更快整合不同模态的洞见。
+>   * **收益：** 更快整合不同模态的洞察。
 
 ### 7. A/B Testing or Multiple Options Generation
 
@@ -186,7 +187,7 @@ Generating multiple variations of a response or output in parallel to select the
 
 Parallelization is a fundamental optimization technique in agentic design, allowing developers to build more performant and responsive applications by leveraging concurrent execution for independent tasks.
 
-> 并行化是智能体设计里的基础优化手段：把能并行的独立任务叠在一起跑，应用会更快、响应更敏捷。
+> `并行化`(Parallelization) 是智能体设计中的基础优化手段：将彼此独立、可并行的任务并发执行，应用整体会更快，响应也更及时。
 
 ## Hands-On Code Example (LangChain)
 
@@ -324,7 +325,7 @@ The provided Python code implements a LangChain application designed for process
 
 The code begins by importing essential modules from `langchain_openai` and `langchain_core`, including components for language models, prompts, output parsing, and runnable structures. The code attempts to initialize a ChatOpenAI instance, specifically using the "gpt-4o-mini" model, with a specified temperature for controlling creativity. A try-except block is used for robustness during the language model initialization. Three independent LangChain "chains" are then defined, each designed to perform a distinct task on the input topic. The first chain is for summarizing the topic concisely, using a system message and a user message containing the topic placeholder. The second chain is configured to generate three interesting questions related to the topic. The third chain is set up to identify between 5 and 10 key terms from the input topic, requesting them to be comma-separated. Each of these independent chains consists of a ChatPromptTemplate tailored to its specific task, followed by the initialized language model and a StrOutputParser to format the output as a string.
 
-> 代码从 `langchain_openai`、`langchain_core` 引入模型、提示模板、输出解析与 runnable 抽象；尝试创建 `ChatOpenAI`（`gpt-4o-mini`）并设置 temperature，初始化失败时用 try-except 兜底。接着定义三条互不依赖的链：一条做简短摘要，一条生成三个延伸问题，一条抽取 5–10 个逗号分隔的关键词。每条链都是「`ChatPromptTemplate` → 模型 → `StrOutputParser`」。
+> 代码从 `langchain_openai`、`langchain_core` 引入模型、提示模板、输出解析与 runnable 抽象；尝试创建 `ChatOpenAI`（`gpt-4o-mini`）并设置 temperature，初始化失败时由 try-except 捕获异常，避免示例直接崩溃。接着定义三条互不依赖的链：一条做简短摘要，一条生成三个延伸问题，一条抽取 5–10 个逗号分隔的关键词。每条链都是「`ChatPromptTemplate` → 模型 → `StrOutputParser`」。
 
 A RunnableParallel block is then constructed to bundle these three chains, allowing them to execute simultaneously. This parallel runnable also includes a RunnablePassthrough to ensure the original input topic is available for subsequent steps. A separate ChatPromptTemplate is defined for the final synthesis step, taking the summary, questions, key terms, and the original topic as input to generate a comprehensive answer. The full end-to-end processing chain, named `full_parallel_chain`, is created by sequencing the `map_chain` (the parallel block) into the synthesis prompt, followed by the language model and the output parser. An asynchronous function `run_parallel_example` is provided to demonstrate how to invoke this `full_parallel_chain`. This function takes the topic as input and uses invoke to run the asynchronous chain. Finally, the standard Python `if __name__ \== "__main__":` block shows how to execute the `run_parallel_example` with a sample topic, in this case, "The history of space exploration", using asyncio.run to manage the asynchronous execution.
 
@@ -455,11 +456,11 @@ This code defines a multi-agent system used to research and synthesize informati
 
 A ParallelAgent named ParallelWebResearchAgent is then created to run these three researcher agents concurrently. This allows the research to be conducted in parallel, potentially saving time. The ParallelAgent completes its execution once all its sub-agents (the researchers) have finished and populated the state.
 
-> 接着用 `ParallelAgent`（示例名 ParallelWebResearchAgent）并行拉起三名研究员，缩短墙钟时间；待各子智能体跑完并把结果写入状态，这一阶段即告完成。
+> 接着用 `ParallelAgent`（示例名 ParallelWebResearchAgent）并行拉起三名研究员，以缩短实际经过的时间；待各子智能体执行完毕并将结果写入状态，本阶段即结束。
 
 Next, a MergerAgent (also an LlmAgent) is defined to synthesize the research results. This agent takes the summaries stored in the session state by the parallel researchers as input. Its instruction emphasizes that the output must be strictly based only on the provided input summaries, prohibiting the addition of external knowledge. The MergerAgent is designed to structure the combined findings into a report with headings for each topic and a brief overall conclusion.
 
-> 再定义 MergerAgent（同样是 `LlmAgent`）做综述：它读取各研究员写入状态的摘要；系统提示要求全文严格依据所给材料、不得臆补；输出按分主题标题组织，并附简短收束段。
+> 再定义 MergerAgent（同样是 `LlmAgent`）做综述：它读取各研究员写入状态的摘要；系统提示要求全文严格依据所给材料、不得臆补；输出按分主题标题组织，并附简短总结段。
 
 Finally, a SequentialAgent named ResearchAndSynthesisPipeline is created to orchestrate the entire workflow. As the primary controller, this main agent first executes the ParallelAgent to perform the research. Once the ParallelAgent is complete, the SequentialAgent then executes the MergerAgent to synthesize the collected information. The `sequential_pipeline_agent` is set as the `root_agent`, representing the entry point for running this multi-agent system. The overall process is designed to efficiently gather information from multiple sources in parallel and then combine it into a single, structured report.
 
@@ -475,11 +476,11 @@ Finally, a SequentialAgent named ResearchAndSynthesisPipeline is created to orch
 
 **Why:** The Parallelization pattern provides a standardized solution by enabling the simultaneous execution of independent tasks. It works by identifying components of a workflow, like tool usages or LLM calls, that do not rely on each other's immediate outputs. Agentic frameworks like LangChain and the Google ADK provide built-in constructs to define and manage these concurrent operations. For instance, a main process can invoke several sub-tasks that run in parallel and wait for all of them to complete before proceeding to the next step. By running these independent tasks at the same time rather than one after another, this pattern drastically reduces the total execution time.
 
-> **为什么：** 并行化把「彼此不抢先后顺序」的步骤叠在同一时间窗里跑，是应对上述瓶颈的常规打法：标出互不阻塞的工具调用或模型调用，再交给框架调度。LangChain、Google ADK 等都提供相应原语。典型形态是：父流程 fork 出多条子任务，等全部返回后再继续。墙钟时间往往从「相加」变成「接近最慢那一条」。
+> **为什么：** 并行化把彼此不存在先后依赖的步骤放进同一时间窗口内执行，是应对上述瓶颈的常规做法：先识别互不阻塞的工具调用或模型调用，再交给框架调度。LangChain、Google ADK 等都提供相应原语。典型形态是：主流程同时发起多条子任务，待它们全部完成后再继续。整体耗时往往会从各步骤简单相加，变得更接近最慢的那一条。
 
 **Rule of thumb:** Use this pattern when a workflow contains multiple independent operations that can run simultaneously, such as fetching data from several APIs, processing different chunks of data, or generating multiple pieces of content for later synthesis.
 
-> **经验法则：** 只要工作流里存在「互不依赖、可同时开工」的若干操作，就值得考虑并行化——例如多源拉数、分片处理，或先生成多段素材再统一综合。
+> **经验法则：** 只要工作流里存在互不依赖、可同时开工的若干操作，就值得考虑并行化——例如从多个来源并行取数、分片处理，或先生成多段内容再统一汇总。
 
 **Visual summary:**
 
@@ -507,13 +508,13 @@ Here are the key takeaways:
 * Google ADK can facilitate parallel execution through LLM-Driven Delegation, where a Coordinator agent's LLM identifies independent sub-tasks and triggers their concurrent handling by specialized sub-agents.  
 * Parallelization helps reduce overall latency and makes agentic systems more responsive for complex tasks.
 
-> * 并行化即并发执行彼此独立的子任务，以略高的设计与运维复杂度换取更短的端到端时延与更好吞吐。
+> * 并行化即并发执行彼此独立的子任务，以略高的设计与运维复杂度换取更短的端到端时延与更高的吞吐。
 > * 外部 I/O 多、等待时间长时，收益通常最大。
-> * 并发/并行也会抬高设计、排障与可观测性的成本，要心里有数。
+> * 并发/并行也会增加设计、故障定位与逻辑可读性的成本，要心里有数。
 > * LangChain、Google ADK 等框架都内建并行编排能力。
 > * LCEL 里常用 `RunnableParallel` 把多个 runnable 并排挂起。
 > * ADK 侧还可借助 LLM 协调：由上层智能体识别可并行的子任务，再分发给子智能体同时执行。
-> * 合理并行能压低端到端延迟，让系统在重负载下仍保持较好的响应感。
+> * 合理`并行`，能减少`端到端延迟`(end-to-end latency)，让系统在重负载下仍能保持较好的响应性。
 
 ## Conclusion
 
@@ -521,19 +522,18 @@ Here are the key takeaways:
 
 The parallelization pattern is a method for optimizing computational workflows by concurrently executing independent sub-tasks. This approach reduces overall latency, particularly in complex operations that involve multiple model inferences or calls to external services.
 
-> 并行化用「同时推进多条独立子任务」来优化工作流，压低整体延迟；在多次模型调用或密集外部依赖的场景里尤其吃香。
+> `并行化`(Parallelization) 通过同时推进多条独立子任务来优化工作流，从而压低整体延迟；在多次模型调用或高度依赖外部服务的场景中尤为适用。
 
 Frameworks provide distinct mechanisms for implementing this pattern. In LangChain, constructs like RunnableParallel are used to explicitly define and execute multiple processing chains simultaneously. In contrast, frameworks like the Google Agent Developer Kit (ADK) can achieve parallelization through multi-agent delegation, where a primary coordinator model assigns different sub-tasks to specialized agents that can operate concurrently.
 
-> 不同框架的抓手不一样：LangChain 侧可用 `RunnableParallel` 一类构造，显式声明「这几条链一起跑」；Google Agent Developer Kit（ADK）等则常通过多智能体编排，由协调者把子任务派给可并行的专职智能体。
+> 不同框架的机制不一样：LangChain 侧可用 `RunnableParallel` 一类构造，显式声明「这几条链一起跑」；Google Agent Developer Kit（ADK）等则常通过多智能体编排，由协调者把子任务派给可并行的专职智能体。
 
 By integrating parallel processing with sequential (chaining) and conditional (routing) control flows, it becomes possible to construct sophisticated, high-performance computational systems capable of efficiently managing diverse and complex tasks.
 
-> 将并行与顺序链式、条件路由等控制流组合起来，可构建既能承载复杂任务、又能在时延上站得住的智能体系统。
+> 将`并行`与`顺序链式`、`条件路由`等控制流组合起来，可构建既能承载复杂任务、又能在时延上站得住的智能体系统。
 
 ## References
 
-> 下列为英文参考资料链接（条目保持原文）。
 
 Here are some resources for further reading on the Parallelization pattern and related concepts:
 
