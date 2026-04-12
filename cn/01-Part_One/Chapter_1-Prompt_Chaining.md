@@ -371,11 +371,11 @@ This structured approach is what differentiates a rudimentary AI tool from a mor
 
 **What:** Complex tasks often overwhelm LLMs when handled within a single prompt, leading to significant performance issues. The cognitive load on the model increases the likelihood of errors such as overlooking instructions, losing context, and generating incorrect information. A monolithic prompt struggles to manage multiple constraints and sequential reasoning steps effectively. This results in unreliable and inaccurate outputs, as the LLM fails to address all facets of the multifaceted request.
 
-> **是什么：** 复杂任务若在单条提示内处理，常使 LLM 不堪重负并出现明显性能问题；认知负荷升高会增加忽视指令、丢失上下文、生成错误信息等风险。整体式提示难以同时管好多重约束与顺序推理，导致输出不可靠、不准确，无法覆盖多面请求的各个侧面。
+> **是什么：** 复杂任务若在单条提示内处理，常使 LLM 不堪重负并出现明显性能问题；认知负荷升高会增加忽视指令、丢失上下文、生成错误信息等风险。`单一的整体提示` monolithic prompt 难以同时管好多重约束与顺序推理，导致输出不可靠、不准确，无法覆盖多面请求的各个侧面。
 
-**Why:** Prompt chaining provides a standardized solution by breaking down a complex problem into a sequence of smaller, interconnected sub-tasks. Each step in the chain uses a focused prompt to perform a specific operation, significantly improving reliability and control. The output from one prompt is passed as the input to the next, creating a logical workflow that progressively builds towards the final solution. This modular, divide-and-conquer strategy makes the process more manageable, easier to debug, and allows for the integration of external tools or structured data formats between steps. This pattern is foundational for developing sophisticated, multi-step Agentic systems that can plan, reason, and execute complex workflows.
+**Why:** `Prompt chaining` provides a standardized solution by breaking down a complex problem into a sequence of smaller, interconnected sub-tasks. Each step in the chain uses a focused prompt to perform a specific operation, significantly improving reliability and control. The output from one prompt is passed as the input to the next, creating a logical workflow that progressively builds towards the final solution. This modular, divide-and-conquer strategy makes the process more manageable, easier to debug, and allows for the integration of external tools or structured data formats between steps. This pattern is foundational for developing sophisticated, multi-step Agentic systems that can plan, reason, and execute complex workflows.
 
-> **为什么：** 提示链通过把复杂问题拆成更小、彼此衔接的子任务序列，提供标准化解法。链中每一步用聚焦提示完成特定操作，显著提升可靠性与可控性；上一步输出作为下一步输入，形成逐步逼近最终答案的逻辑工作流。模块化分治使流程更易管理、更易调试，并允许在步骤间整合外部工具或结构化数据。该模式是开发能规划、推理并执行复杂工作流的多步智能体系统的基础。
+> **为什么：** `提示链` 通过把复杂问题拆成更小、彼此衔接的子任务序列，提供标准化解法。链中每一步用聚焦提示完成特定操作，显著提升可靠性与可控性；上一步输出作为下一步输入，形成逐步逼近最终答案的逻辑工作流。模块化分治使流程更易管理、更易调试，并允许在步骤间整合外部工具或结构化数据。该模式是开发能规划、推理并执行复杂工作流的多步智能体系统的基础。
 
 **Rule of thumb:** Use this pattern when a task is too complex for a single prompt, involves multiple distinct processing stages, requires interaction with external tools between steps, or when building Agentic systems that need to perform multi-step reasoning and maintain state.
 
@@ -404,7 +404,7 @@ Here are some key takeaways:
 * This pattern improves the reliability and manageability of complex interactions with language models.  
 * Frameworks like LangChain/LangGraph, and Google ADK  provide robust tools to define, manage, and execute these multi-step sequences.
 
-> * 提示链把复杂任务拆成更小、更聚焦的步骤序列；有时也称为流水线模式。
+> * `提示链` (Prompt Chaining) 把复杂任务拆成更小、更聚焦的步骤序列；有时也称为`流水线模式`(Pipeline pattern)。
 > * 链中每一步是一次 LLM 调用或处理逻辑，并以上一步输出为输入。
 > * 该模式提升与语言模型复杂交互的可靠性与可管理性。
 > * LangChain/LangGraph 与 Google ADK 等框架提供定义、管理与执行这些多步序列的稳健工具。
@@ -413,9 +413,9 @@ Here are some key takeaways:
 
 > ## 结语
 
-By deconstructing complex problems into a sequence of simpler, more manageable sub-tasks, prompt chaining provides a robust framework for guiding large language models. This "divide-and-conquer" strategy significantly enhances the reliability and control of the output by focusing the model on one specific operation at a time. As a foundational pattern, it enables the development of sophisticated AI agents capable of multi-step reasoning, tool integration, and state management. Ultimately, mastering prompt chaining is crucial for building robust, context-aware systems that can execute intricate workflows well beyond the capabilities of a single prompt.
+By deconstructing complex problems into a sequence of simpler, more manageable sub-tasks, `prompt chaining` provides a robust framework for guiding large language models. This "divide-and-conquer" strategy significantly enhances the reliability and control of the output by focusing the model on one specific operation at a time. As a foundational pattern, it enables the development of sophisticated AI agents capable of `multi-step reasoning`, `tool integration`, and `state management`. Ultimately, mastering `prompt chaining` is crucial for building robust, context-aware systems that can execute intricate workflows well beyond the capabilities of a single prompt.
 
-> 通过把复杂问题拆解为更简单、更易管理的子任务序列，提示链为引导大语言模型提供了一个稳健框架。「分而治之」让模型在每一步只需专注于一项具体操作，从而显著提升输出的可靠性与可控性。作为一种基础模式，它支撑着具备多步推理、工具整合和状态管理能力的复杂智能体的开发。归根结底，掌握提示链，对于构建能够执行远超单条提示能力范围的复杂工作流、同时具备上下文感知能力的稳健系统，至关重要。
+> 通过将复杂问题拆解为一系列更简单、更易处理的子任务，`提示链`为引导大语言模型提供了一个稳健的框架。这种“分而治之”的策略让模型在每一步只聚焦于单一操作，从而显著提升了输出的可靠性与可控性。作为一种基础模式，它为开发具备`多步推理`、`工具集成`和`状态管理`能力的复杂智能体奠定了基础。归根结底，掌握提示链对于构建稳健、具备上下文感知能力且能够执行远超单条提示所能完成之复杂工作流的系统，至关重要。
 
 ## References
 
