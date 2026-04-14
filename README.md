@@ -10,11 +10,24 @@ Agentic 时代已经来了，热热闹闹，作为从业者，需要了解些技
 因此，借助 AI 的力量，做了一个 `中英文版本`，保持英文原文、同时增加中文批注。
 
 
+
 ## 2.在线浏览 & pdf 下载
+
+> 《Agentic Design Patterns》 翻译中文版本的人很多，但是，当前仓库，**有几个优势**：
+>
+> 1. `中英文版本`，保留了英文原文，减少翻译过程中的 信息丢失
+> 2. 当下最先进的模型：采用 `GPT-5.4` 校正翻译结果，保证表述准确、流畅
+> 3. `清晰的配图`：从 pdf 中，抽取的高清配图
+> 4. `规范的 pdf `文档：包含完整的目录、页码
+> 
 
 在线浏览：[https://ningg.top/Agentic-Design-Patterns-CN](https://ningg.top/Agentic-Design-Patterns-CN)
 
 pdf 下载：[https://github.com/ningg/Agentic-Design-Patterns-CN/releases](https://github.com/ningg/Agentic-Design-Patterns-CN/releases)
+
+GitHub 地址： [https://github.com/ningg/Agentic-Design-Patterns-CN](https://github.com/ningg/Agentic-Design-Patterns-CN)
+
+
 
 
 <p align="center">
@@ -24,7 +37,9 @@ pdf 下载：[https://github.com/ningg/Agentic-Design-Patterns-CN/releases](http
 
 ## 3.贡献
 
-如果你有任何问题或建议，欢迎提交 issue 或 pull request。
+> 欢迎大家一起维护
+
+如果你有任何问题或建议，欢迎提交 [issue](https://github.com/ningg/Agentic-Design-Patterns-CN/issues) 或 pull request。
 
 欢迎 fork、star、watch：[https://github.com/ningg/Agentic-Design-Patterns-CN/](https://github.com/ningg/Agentic-Design-Patterns-CN/)
 
