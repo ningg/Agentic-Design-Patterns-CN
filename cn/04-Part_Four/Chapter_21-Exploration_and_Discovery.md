@@ -59,12 +59,12 @@ The core agents and their functions include (see Fig. 1):
 * **Proximity agent**: Computes a proximity graph to cluster similar ideas and assist in exploring the hypothesis landscape.  
 * **Meta-review agent**: Synthesizes insights from all reviews and debates to identify common patterns and provide feedback, enabling the system to continuously improve.
 
-> * **生成智能体（Generation agent）：** 结合文献检索与「虚拟学术辩论」抛出首批假设，拉开探索序幕。
+> * **生成智能体（Generation agent）：** 结合文献检索与「虚拟学术辩论」提出首批假设，拉开探索序幕。
 > * **反思智能体（Reflection agent）：** 以审稿人视角审视假设的科学性、原创度与表述质量。
 > * **排序智能体（Ranking agent）：** 借助 Elo 式对抗赛在多轮辩论中比较假设强弱并完成排序。
-> * **演化智能体（Evolution agent）：** 对头部假设做概念压缩、思想融合与非常规推理，迭代升级版本。
+> * **演化智能体（Evolution agent）：** 对头部假设做概念压缩、思想融合与非常规推理，持续迭代版本。
 > * **邻近智能体（Proximity agent）：** 构建相似度图，聚类相近想法，帮助研究者在高维假设空间里导航。
-> * **元评审智能体（Meta-review agent）：** 汇总各轮评审与辩论，提炼共性模式与改进信号，驱动下一轮自我进化。
+> * **元评审智能体（Meta-review agent）：** 汇总各轮评审与辩论，提炼共性模式与改进信号，驱动下一轮迭代。
 
 The system's operational foundation relies on Gemini, which provides language understanding, reasoning, and generative abilities. The system incorporates "test-time compute scaling," a mechanism that allocates increased computational resources to iteratively reason and enhance outputs. The system processes and synthesizes information from diverse sources, including academic literature, web-based data, and databases.
 
@@ -86,7 +86,7 @@ The system follows an iterative "generate, debate, and evolve" approach mirrorin
 
 **Automated and Expert Evaluation:** On the challenging GPQA benchmark, the system's internal Elo rating was shown to be concordant with the accuracy of its results, achieving a top-1 accuracy of 78.4% on the difficult "diamond set". Analysis across over 200 research goals demonstrated that scaling test-time compute consistently improves the quality of hypotheses, as measured by the Elo rating. On a curated set of 15 challenging problems, the AI co-scientist outperformed other state-of-the-art AI models and the "best guess" solutions provided by human experts. In a small-scale evaluation, biomedical experts rated the co-scientist's outputs as more novel and impactful compared to other baseline models. The system's proposals for drug repurposing, formatted as NIH Specific Aims pages, were also judged to be of high quality by a panel of six expert oncologists.
 
-> **自动化与专家评估：** 在 GPQA 的高难度子集上，内部 Elo 分数与真实准确率高度一致，「diamond set」的 top-1 达到 78.4%。对 200 多个研究目标的统计也显示，只要追加测试时算力，假设质量就会稳定提升，仍以 Elo 作为量化指标。在 15 道精选难题上，系统整体优于同期 SOTA 模型以及人类专家给出的「最佳猜测」。在小规模盲评中，生物医学同行认为其提案比基线模型更新颖、潜在影响力也更高；六名肿瘤专家也对 NIH Specific Aims 风格的药物重定位草案给出了高分。
+> **自动化与专家评估：** 在 GPQA 的高难度子集上，内部 Elo 分数与真实准确率高度一致，「diamond set」的 top-1 达到 78.4%。对 200 多个研究目标的统计也显示，只要增加测试时算力，假设质量就会稳定提升，Elo 仍可作为量化指标。在 15 道精选难题上，系统整体优于同期 SOTA 模型以及人类专家给出的「最佳猜测」。在小规模盲评中，生物医学同行认为它的提案比基线模型更新颖、潜在影响力也更高；六名肿瘤专家也对 NIH Specific Aims 风格的药物重定位草案给出了高分。
 
 **End-to-End Experimental Validation:**
 
@@ -102,11 +102,11 @@ Drug Repurposing: For acute myeloid leukemia (AML), the system proposed novel dr
 
 Antimicrobial Resistance: The AI co-scientist independently recapitulated unpublished experimental findings. It was tasked to explain why certain mobile genetic elements (cf-PICIs) are found across many bacterial species. In two days, the system's top-ranked hypothesis was that cf-PICIs interact with diverse phage tails to expand their host range. This mirrored the novel, experimentally validated discovery that an independent research group had reached after more than a decade of research.
 
-> **抗菌耐药性：** 在一项独立任务中，系统在两天内给出的首选假设，与某团队尚未发表、但已用十余年才完成实验验证的结论一致：可移动遗传元件 cf-PICIs 可能通过结合多种噬菌体尾部蛋白来拓宽宿主谱。换言之，模型在没有任何内幕信息的情况下，「撞」上了真实世界的新知。
+> **抗菌耐药性：** 在一项独立任务中，系统只用两天就给出了首选假设，而且与某团队尚未发表、却耗时十余年才完成实验验证的结论一致：可移动遗传元件 cf-PICIs 可能通过结合多种噬菌体尾部蛋白来拓宽宿主谱。换言之，模型在没有任何内幕信息的情况下，「撞」上了真实世界的新知。
 
 **Augmentation, and Limitations:** The design philosophy behind the AI co-scientist emphasizes augmentation rather than complete automation of human research. Researchers interact with and guide the system through natural language, providing feedback, contributing their own ideas, and directing the AI's exploratory processes in a "scientist-in-the-loop" collaborative paradigm. However, the system has some limitations. Its knowledge is constrained by its reliance on open-access literature, potentially missing critical prior work behind paywalls. It also has limited access to negative experimental results, which are rarely published but crucial for experienced scientists. Furthermore, the system inherits limitations from the underlying LLMs, including the potential for factual inaccuracies or "hallucinations".
 
-> **增强与局限：** 它的产品哲学是 **人机共研**，而不是一键替代科学家。用户可以用自然语言输入洞见、纠偏方向，在 scientist-in-the-loop 框架里共同驾驭探索。局限也同样现实：训练语料以开放获取文献为主，付费墙背后的关键论文可能缺席；阴性结果本就稀缺，模型也更难学到「此路不通」的经验；此外，它仍然受制于 LLM 固有的幻觉与事实漂移问题。
+> **增强与局限：** 它的产品哲学是 **人机共研**，而不是一键替代科学家。用户可以用自然语言输入洞见、纠偏方向，在 scientist-in-the-loop 框架里共同推进探索。局限也很现实：训练语料以开放获取文献为主，付费墙背后的关键论文可能缺席；阴性结果本就稀缺，模型也更难学到「此路不通」的经验；此外，它仍受制于 LLM 固有的幻觉与事实漂移问题。
 
 **Safety:** Safety is a critical consideration, and the system incorporates multiple safeguards. All research goals are reviewed for safety upon input, and generated hypotheses are also checked to prevent the system from being used for unsafe or unethical research. A preliminary safety evaluation using 1,200 adversarial research goals found that the system could robustly reject dangerous inputs. To ensure responsible development, the system is being made available to more scientists through a Trusted Tester Program to gather real-world feedback.
 
@@ -122,7 +122,7 @@ Let's look at a concrete example of agentic AI for Exploration and Discovery in 
 
 "Agent Laboratory" is an autonomous research workflow framework designed to augment human scientific endeavors rather than replace them. This system leverages specialized LLMs to automate various stages of the scientific research process, thereby enabling human researchers to dedicate more cognitive resources to conceptualization and critical analysis.
 
-> Agent Laboratory 是一套自主科研工作流编排器。它的目标，是把机械环节交给专职 LLM，让人类把脑力留给问题建模与批判性反思，而不是简单替代研究员。
+> Agent Laboratory 是一套自主科研工作流编排器。它的目标是把机械环节交给专职 LLM，让人类把脑力留给问题建模与批判性反思，而不是简单替代研究员。
 
 The framework integrates "AgentRxiv," a decentralized repository for autonomous research agents. AgentRxiv facilitates the deposition, retrieval, and development of research outputs
 
@@ -138,9 +138,9 @@ Agent Laboratory guides the research process through distinct phases:
 4. **Knowledge Sharing**: AgentRxiv is a platform enabling autonomous research agents to share, access, and collaboratively advance scientific discoveries. It allows agents to build upon previous findings, fostering cumulative research progress.
 
 > 1. **文献综述：** 专科智能体自动抓取并批判性阅读相关论文，依托 arXiv 等索引构建可检索的知识基础。
-> 2. **实验：** 多智能体协同撰写实验方案、清洗数据、执行实验并解读指标；Python 负责代码生成与执行，Hugging Face 提供模型侧能力，全程支持基于中间结果的滚动优化。
+> 2. **实验：** 多智能体协同撰写实验方案、清洗数据、执行实验并解读指标；Python 负责代码生成与执行，Hugging Face 提供模型能力，整个过程支持根据中间结果滚动优化。
 > 3. **报告撰写：** 将实验洞见与文献证据融合，按学术体例排版，并可挂接 LaTeX 生成正式稿件与插图。
-> 4. **知识共享：** 通过 AgentRxiv 让不同智能体彼此复用并增量改进历史成果，形成开放式的累积创新。
+> 4. **知识共享：** 通过 AgentRxiv 让不同智能体彼此复用并持续改进历史成果，形成开放式的累积创新。
 
 The modular architecture of Agent Laboratory ensures computational flexibility. The aim is to enhance research productivity by automating tasks while maintaining the human researcher.
 
@@ -148,7 +148,7 @@ The modular architecture of Agent Laboratory ensures computational flexibility. 
 
 **Code analysis:** While a comprehensive code analysis is beyond the scope of this book, I want to provide you with some key insights and encourage you to delve into the code on your own.
 
-> **代码分析：** 受篇幅所限，这里无法逐行拆解代码，只列出几个关键设计抓手；更细的实现细节，建议读者自行克隆仓库继续追踪。
+> **代码分析：** 受篇幅所限，这里无法逐行拆解代码，只列几个关键设计抓手；更细的实现细节，建议读者自行克隆仓库继续追踪。
 
 **Judgment:** In order to emulate human evaluative processes, the system employs a tripartite agentic judgment mechanism for assessing outputs. This involves the deployment of three distinct autonomous agents, each configured to evaluate the production from a specific perspective, thereby collectively mimicking the nuanced and multi-faceted nature of human judgment. This approach allows for a more robust and comprehensive appraisal, moving beyond singular metrics to capture a richer qualitative assessment.
 
@@ -291,7 +291,7 @@ class ProfessorAgent(BaseAgent):
 
 **PostDoc Agent:** The PostDoc Agent's role is to execute the research. This includes conducting literature reviews, designing and implementing experiments, and generating research outputs such as papers. Importantly, the PostDoc Agent has the capability to write and execute code, enabling the practical implementation of experimental protocols and data analysis. This agent is the primary producer of research artifacts.
 
-> **博士后智能体（PostDoc Agent）：** 一线执行者，覆盖综述、实验设计、跑数和写初稿；既能写代码也能跑代码，是仓库里大部分 artifact 的直接作者。
+> **博士后智能体（PostDoc Agent）：** 一线执行者，覆盖综述、实验设计、跑数和写初稿；既能写代码也能跑代码，是仓库里大部分 artifact 的直接产出者。
 
 ```python
 class PostdocAgent(BaseAgent):
@@ -335,7 +335,7 @@ class PostdocAgent(BaseAgent):
 
 **ML Engineering Agents**:The Machine Learning Engineering Agents serve as machine learning engineers, engaging in dialogic collaboration with a PhD student to develop code. Their central function is to generate uncomplicated code for data preprocessing, integrating insights derived from the provided literature review and experimental protocol. This guarantees that the data is appropriately formatted and prepared for the designated experiment.
 
-> **机器学习工程智能体（ML Engineering Agents）：** 与博士生角色结对，专注把数据清洗到「能喂模型」的状态；代码刻意保持短小可读，并显式吸收上游文献与实验计划里的约束。
+> **机器学习工程智能体（ML Engineering Agents）：** 与博士生角色结对，专注把数据整理到「能喂模型」的状态；代码刻意保持短小可读，并显式吸收上游文献与实验计划里的约束。
 
 ```markdown
 "You are a machine learning engineer being directed by a PhD student who will help you write the code, and you can interact with them through dialogue.\n"
@@ -353,7 +353,7 @@ class PostdocAgent(BaseAgent):
 
 In summary, "Agent Laboratory" represents a sophisticated framework for autonomous scientific research. It is designed to augment human research capabilities by automating key research stages and facilitating collaborative AI-driven knowledge generation. The system aims to increase research efficiency by managing routine tasks while maintaining human oversight.
 
-> 综上，Agent Laboratory 把「文献—实验—写作—共享」串成了一条可编排的流水线，通过多智能体协作提升算力利用率和流程编排效率；人类仍保有监督与纠偏权，而系统则承担大量重复性工作，用来提升整体迭代速度。
+> 综上，Agent Laboratory 把「文献—实验—写作—共享」串成了一条可编排的流水线，通过多智能体协作提升算力利用率与流程效率；人类仍保有监督与纠偏权，而系统则承担大量重复性工作，从而提升整体迭代速度。
 
 ## At a Glance
 
@@ -361,7 +361,7 @@ In summary, "Agent Laboratory" represents a sophisticated framework for autonomo
 
 **What:** AI agents often operate within predefined knowledge, limiting their ability to tackle novel situations or open-ended problems. In complex and dynamic environments, this static, pre-programmed information is insufficient for true innovation or discovery. The fundamental challenge is to enable agents to move beyond simple optimization to actively seek out new information and identify "unknown unknowns." This necessitates a paradigm shift from purely reactive behaviors to proactive, Agentic exploration that expands the system's own understanding and capabilities.
 
-> **是什么：** 许多智能体仍受限于预训练知识或人工整理出的知识边界，面对开放式问题时，往往只能停留在「复述已知答案」的层面。面对复杂世界，静态 playbook 很难支撑真正的创新。关键跃迁在于，从「在已知目标函数上微调」转向「主动扩展状态空间」，显式去寻找未知的未知。
+> **是什么：** 许多智能体仍受限于预训练知识或人工整理出的知识边界，面对开放式问题时，往往只能停留在「复述已知答案」的层面。面对复杂世界，静态 playbook 很难支撑真正的创新。关键跃迁在于，从「在已知目标函数上微调」转向「主动扩展状态空间」，主动去寻找未知的未知。
 
 **Why:** The standardized solution is to build Agentic AI systems specifically designed for autonomous exploration and discovery. These systems often utilize a multi-agent framework where specialized LLMs collaborate to emulate processes like the scientific method. For instance, distinct agents can be tasked with generating hypotheses, critically reviewing them, and evolving the most promising concepts. This structured, collaborative methodology allows the system to intelligently navigate vast information landscapes, design and execute experiments, and generate genuinely new knowledge. By automating the labor-intensive aspects of exploration, these systems augment human intellect and significantly accelerate the pace of discovery.
 
@@ -405,7 +405,7 @@ In conclusion, the Exploration and Discovery pattern is the very essence of a tr
 
 Frameworks like Agent Laboratory further structure this by creating an agentic hierarchy that mimics human research teams, enabling the system to self-manage the entire discovery lifecycle. The core of this pattern lies in orchestrating emergent agentic behaviors, allowing the system to pursue long-term, open-ended goals with minimal human intervention. This elevates the human-AI partnership, positioning the AI as a genuine agentic collaborator that handles the autonomous execution of exploratory tasks. By delegating this proactive discovery work to an agentic system, human intellect is significantly augmented, accelerating innovation. The development of such powerful agentic capabilities also necessitates a strong commitment to safety and ethical oversight. Ultimately, this pattern provides the blueprint for creating truly agentic AI, transforming computational tools into independent, goal-seeking partners in the pursuit of knowledge.
 
-> Agent Laboratory 则进一步用「导师—执行—评审」式层级把流程产品化，让发现链路可以半自治运转。关键在于，它能够编排多代理的涌现行为，使系统即便在弱监督下，仍能追逐长期、开放的目标。人机关系也因此升级：AI 不再只是被动工具，而是能自己开题、试错、汇总的合作者。当然，能力越强，安全与伦理护栏就越要同步加厚；只有把探索关在可控边界内，才能把算力真正转化为可靠的新知生产引擎。
+> Agent Laboratory 则进一步用「导师—执行—评审」式层级把流程产品化，让发现链路可以半自治运转。关键在于，它能够编排多代理的涌现行为，使系统即便在弱监督下，仍能追逐长期、开放的目标。人机关系也因此升级：AI 不再只是被动工具，而是能自己开题、试错、汇总的合作者。当然，能力越强，安全与伦理护栏就越要同步加厚；只有把探索关在可控边界内，算力才能真正转化为可靠的新知生产引擎。
 
 ## References
 
