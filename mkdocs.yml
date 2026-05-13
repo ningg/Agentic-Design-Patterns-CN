@@ -1,8 +1,8 @@
 site_name: Agentic Design Patterns - 智能体设计模式 (中英文版本)
 site_description: Agentic Design Patterns 中英文版，智能体设计模式
 site_author: ningg@GitHub
-copyright: https://ningg.top/Agentic-Design-Patterns-CN
-site_url: http://ningg.top/Agentic-Design-Patterns-CN
+copyright: https://ningg.top/Agentic-Design-Patterns-CN/
+site_url: https://ningg.top/Agentic-Design-Patterns-CN/
 repo_url: https://github.com/ningg/Agentic-Design-Patterns-CN
 docs_dir: cn
 site_dir: site
@@ -10,6 +10,7 @@ use_directory_urls: true
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   features:
     - navigation.instant
@@ -37,6 +38,7 @@ plugins:
       custom_template_path: pdf-template
 
 markdown_extensions:
+  - meta
   - admonition
   - attr_list
   - md_in_html

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ningg.top/Agentic-Design-Patterns-CN/sitemap.xml

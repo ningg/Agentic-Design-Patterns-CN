@@ -1,3 +1,9 @@
+---
+description: >-
+  《Agentic Design Patterns》在线中英文版：保留英文原文并附中文批注，系统讲解提示链、路由、规划、MCP、RAG、多智能体协作与护栏等 21 种智能体设计模式，含可运行代码示例。
+keywords: Agentic Design Patterns, 智能体设计模式, AI agents, MCP, RAG, multi-agent, Antonio Gulli, 智能体
+---
+
 # Agentic Design Patterns
 
 

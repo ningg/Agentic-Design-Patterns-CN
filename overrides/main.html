@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  {% if page.meta and page.meta.keywords %}
+    <meta name="keywords" content="{{ page.meta.keywords }}">
+  {% endif %}
+  {% if page.meta and page.meta.title %}
+    {% set seo_title = page.meta.title ~ " - " ~ config.site_name %}
+  {% elif page.title and not page.is_homepage %}
+    {% set seo_title = page.title | striptags ~ " - " ~ config.site_name %}
+  {% else %}
+    {% set seo_title = config.site_name %}
+  {% endif %}
+  {% if page.meta and page.meta.description %}
+    {% set seo_desc = page.meta.description %}
+  {% elif config.site_description %}
+    {% set seo_desc = config.site_description %}
+  {% else %}
+    {% set seo_desc = "" %}
+  {% endif %}
+  {% set cover_rel = "assets-new/Agentic_Design_Patterns_Book_Cover_CN.png" %}
+  {% set og_image = config.site_url ~ cover_rel %}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ seo_title }}">
+  {% if seo_desc %}
+    <meta property="og:description" content="{{ seo_desc }}">
+  {% endif %}
+  {% if page.canonical_url %}
+    <meta property="og:url" content="{{ page.canonical_url }}">
+  {% endif %}
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ seo_title }}">
+  {% if seo_desc %}
+    <meta name="twitter:description" content="{{ seo_desc }}">
+  {% endif %}
+  <meta name="twitter:image" content="{{ og_image }}">
+  {% set book_desc = seo_desc or config.site_description or "" %}
+  {% set book_ld = {
+    "@context": "https://schema.org",
+    "@type": "Book",
+    "name": "Agentic Design Patterns",
+    "inLanguage": ["en", "zh-CN"],
+    "author": {"@type": "Person", "name": "Antonio Gulli"},
+    "contributor": {"@type": "Person", "name": "ningg"},
+    "url": config.site_url | trim,
+    "image": og_image,
+    "description": book_desc
+  } %}
+  <script type="application/ld+json">{{ book_ld | tojson }}</script>
+{% endblock %}
