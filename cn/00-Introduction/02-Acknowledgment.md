@@ -11,11 +11,11 @@ First and foremost, I thank Google for adhering to its mission, empowering Googl
 I am grateful to the Office of the CTO for giving me the opportunity to explore new areas, for adhering to its mission of "practical magic," and for its capacity to adapt to new emerging opportunities.
 
 > 感谢首席技术官办公室（OCTO）给予我探索新领域的机会；
-> 感谢它坚守“实用魔法”的使命，并善于把握不断涌现的新机遇。
+> 感谢它坚守“实用魔法 practical magic ”的使命，并善于把握不断涌现的新机遇。
 
 I would like to extend my heartfelt thanks to Will Grannis, our VP, for the trust he puts in people and for being a servant leader. To John Abel, my manager, for encouraging me to pursue my activities and for always providing great guidance with his British acumen.I extend my gratitude to Antoine Larmanjat for our work on LLMs in code, Hann Hann Wang for agent discussions, and Yingchao Huang for time series insights. Thanks to Ashwin Ram for leadership, Massy Mascaro for inspiring work, Jennifer Bennett for technical expertise, Brett Slatkin for engineering, and Eric Schen for stimulating discussions. The OCTO team, especially Scott Penberthy, deserves recognition. Finally, deep appreciation to Patricia Florissi for her inspiring vision of Agents' societal impact.
 
-> 衷心感谢副总裁 Will Grannis 对人的信任，以及他所践行的仆人式领导。
+> 衷心感谢副总裁 Will Grannis 对人的信任，以及他所践行的`服务式领导`。
 > 感谢我的经理 John Abel 鼓励我推进各项工作，并始终以英式睿智给予卓越指导。
 > 感谢 Antoine Larmanjat 在代码场景中围绕 LLM 展开的合作、Hann Hann Wang 在智能体方向的深入讨论，以及 Yingchao Huang 在时间序列方面的洞见。
 > 感谢 Ashwin Ram 的领导、Massy Mascaro 富有启发性的工作、Jennifer Bennett 的技术专长、Brett Slatkin 的工程贡献，以及 Eric Schen 带来启发的讨论。

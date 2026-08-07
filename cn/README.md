@@ -16,16 +16,16 @@ keywords: Agentic Design Patterns, 智能体设计模式, AI agents, MCP, RAG, m
 ## Authorship and Credit
 
 - **Authors:** [Antonio Gulli](https://www.linkedin.com/in/searchguy/) 
-- **Compiled by:** [ningg@GitHub](https://github.com/ningg)
+- **Compiled by:** [ningg@GitHub](https://github.com/ningg)  (Email: guoning.gn@gmail.com )
 
 > - **作者：** [Antonio Gulli](https://www.linkedin.com/in/searchguy/) 
-> - **翻译：** [ningg@GitHub](https://github.com/ningg)
+> - **翻译：** [ningg@GitHub](https://github.com/ningg) (Email: guoning.gn@gmail.com )
 
 ### What makes this book stand out?
 
 This 424-page guide tackles the real challenges we face when building intelligent, autonomous AI systems. It bridges the gap between theory and implementation—exactly what our field needs right now. This is the best resource for anyone serious about building real AI systems. If you're an engineer, researcher, or product manager ready to move beyond basic LLM applications and build truly robust AI agents, this is for you.
 
-> 这本 424 页的指南直面构建智能、自主 AI 系统时的真实挑战，在理论与工程实践之间搭起桥梁，恰与当下行业所需相契合。对任何希望认真打造可落地 AI 系统的人而言，它都是极具价值的参考；若你是工程师、研究员或产品经理，正准备从基础大语言模型应用迈向真正稳健的智能体系统，本书正适合你。
+> 这本 424 页的指南聚焦在 **构建智能、自主 AI 系统** 时的真实挑战，在理论与工程实践之间搭起桥梁，正好契合当下行业需求。对任何希望认真打造可落地 AI 系统的人而言，它都是极具价值的参考；若你是工程师、研究员或产品经理，正准备从基础大语言模型应用迈向 **真正稳健的智能体系统** ，本书正适合你。
 
 The book covers essential agentic patterns including Prompt Chaining, Routing, Planning, and Multi-Agent Systems, all with practical, code-based examples. You'll find comprehensive coverage of Tool Use, Memory Management, and RAG implementation, plus advanced topics like Reasoning Techniques and Inter-Agent Communication.
 
@@ -33,21 +33,21 @@ The book covers essential agentic patterns including Prompt Chaining, Routing, P
 
 Inside you will find:
 
-> 书中主要内容包括：
+> 书中，主要内容包括：
 
 - **Real code examples:** Not just theory, but working implementations.
 - **Proven patterns:** Memory handling, exception logic, resource control, safety guardrails.
 - **Advanced techniques:** Multi-agent orchestration, inter-agent messaging, human-in-the-loop.
 - **Full chapter on MCP (Model Context Protocol):** A key framework for integrating tools with agents.
 
-> - **真实代码示例：** 不止于理论，更有可运行实现。
+> - **真实代码示例：** 不止于理论，更有可运行代码。
 > - **经实践检验的智能体模式：** 记忆与上下文处理、异常逻辑、资源约束、安全护栏。
 > - **进阶技术：** 多智能体编排、智能体间消息传递、人在回路中（human-in-the-loop）。
 > - **MCP（模型上下文协议）专章：** 将外部工具与智能体集成的关键框架。
 
 It covers 21 core patterns across 4 sections:
 
-> 全书分四部分介绍 21 种核心智能体模式：
+> 全书分四部分，介绍 21 种核心智能体模式：
 
 1. Foundational patterns (prompt chaining, routing, tool use)
 2. Advanced systems (memory, learning, monitoring)
@@ -56,24 +56,25 @@ It covers 21 core patterns across 4 sections:
 
 > 1. 基础模式（提示链、路由、工具使用）
 > 2. 高级系统（记忆、学习、监控）
-> 3. 生产实践关切（错误处理、安全、评估）
+> 3. 生产实践问题（错误处理、安全、评估）
 > 4. 多智能体架构
 
 Most AI content stops at “how to call an API.” But in real-world systems you need to ask:
 
-> 多数 AI 内容止步于「如何调用 API」。在真实系统中，你还需要追问：
+> 现实中，多数 AI 资料聚焦在「如何调用 API」。在真实生产系统中，你还需要追问几个关键问题：
 
 - What if the agent gets stuck mid-task?
 - How do you preserve memory across long sessions?
 - How do you prevent chaos when you run 10+ agents?
 
-> - 智能体在任务中途卡住怎么办？
-> - 如何在长会话中保持记忆连贯？
-> - 同时运行十余个智能体时，如何避免失控与混乱？
+> - 智能体，任务运行时，`中途卡住`怎么办？
+> - 如何在 **长会话** 中，保持`记忆连贯`？
+> - 数十个智能体同时运行，如何`避免失控`与混乱？
 
 This book answers all that with patterns you can actually apply. The 70+ page appendix alone is worth the investment, featuring Advanced Prompting techniques and an overview of Agentic Frameworks.
 
-> 本书以可直接落地的智能体设计模式回答上述问题。仅附录就超过 70 页，涵盖进阶提示工程与智能体开发框架概览。
+> 本书涵盖一系列可直接落地的智能体设计模式，来回答上述问题。
+> 附录部分（大概 70 页），涵盖`进阶提示工程`与`智能体开发框架`概览。
 
 ## Table of Contents
 

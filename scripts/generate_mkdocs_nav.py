@@ -12,13 +12,13 @@ MKDOCS_YML = ROOT / "mkdocs.yml"
 START_MARKER = "  # AUTO_NAV_START"
 END_MARKER = "  # AUTO_NAV_END"
 OTHERS_FILES = [
-    "publics_as_website_mkdocs.md",
     "Agentic_Design_Patterns.md",
     "Conclusion.md",
     "Glossary.md",
     "Index_of_Terms.md",
     "LICENSE.md",
     "Online_Contribution-Frequently_Asked_Questions_Agentic_Design_Patterns.md",
+    "publics_as_website_mkdocs.md",
 ]
 
 

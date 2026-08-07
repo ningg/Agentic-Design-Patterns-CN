@@ -2,14 +2,14 @@
 
 The field of artificial intelligence is at a fascinating inflection point. We are moving beyond building models that can simply process information to creating intelligent systems that can reason, plan, and act to achieve complex goals with ambiguous tasks. These "agentic" systems, as this book so aptly describes them, represent the next frontier in AI, and their development is a challenge that excites and inspires us at Google.
 
-> 人工智能领域正处在一个引人入胜的拐点：我们正从仅能处理信息的模型，迈向能够推理、规划并采取行动、在任务模糊时仍能达成复杂目标的智能系统。
-> 正如本书精准指出的那样，这些“智能体化”系统代表着 AI 的下一个前沿；而推动这一前沿的发展，也正是一项令 Google 团队倍感振奋与鼓舞的挑战。
+> 人工智能领域正处在一个令人兴奋的拐点：我们正从仅能处理信息的模型，迈向能够推理、规划并执行、在任务模糊时仍能达成复杂目标的智能系统。
+> 本书明确提出一个观点：这些“智能体化”系统代表着 AI 的下一个前沿；而推动这一前沿的发展，也正是一项令 Google 团队倍感振奋与鼓舞的挑战。
 
 "Agentic Design Patterns: A Hands-On Guide to Building Intelligent Systems" arrives at the perfect moment to guide us on this journey. The book rightly points out that the power of large language models, the cognitive engines of these agents, must be harnessed with structure and thoughtful design. Just as design patterns revolutionized software engineering by providing a common language and reusable solutions to common problems, the agentic patterns in this book will be foundational for building robust, scalable, and reliable intelligent systems.
 
 > 《Agentic Design Patterns：构建智能系统的实践指南》恰逢其时，为我们指引这一旅程。
-> 本书正确地指出：大语言模型是这些智能体的认知引擎，其能力必须以结构与深思熟虑的设计加以驾驭。
-> 正如设计模式曾以共同语言与可复用方案革新软件工程，本书中的智能体化模式也将成为构建稳健、可扩展且可信赖的智能系统的基础。
+> 本书准确的提出：**大语言模型 LLM** 是这些 `智能体` 的认知引擎，其能力必须以结构与深思熟虑的设计加以驾驭。
+> 就像设计模式曾用一套共同语言和可复用方案，彻底改变了软件工程一样，本书中的智能体模式，也将成为构建稳健、可扩展、可靠的智能系统的基础。
 
 The metaphor of a "canvas" for building agentic systems is one that resonates deeply with our work on Google's Vertex AI platform. We strive to provide developers with the most powerful and flexible canvas on which to build the next generation of AI applications. This book provides the practical, hands-on guidance that will empower developers to use that canvas to its full potential. By exploring patterns from prompt chaining and tool use to agent-to-agent collaboration, self-correction, safety and guardrails, this book offers a comprehensive toolkit for any developer looking to build sophisticated AI agents.
 

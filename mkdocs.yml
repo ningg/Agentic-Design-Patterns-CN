@@ -100,11 +100,11 @@ nav:
     - Appendix F-Under the Hood An Inside Look at the Agents Reasoning Engines: 05-Appendix/Appendix_F-Under_the_Hood_An_Inside_Look_at_the_Agents_Reasoning_Engines.md
     - Appendix G-Coding Agents: 05-Appendix/Appendix_G-Coding_Agents.md
   - Others:
-    - publics as website mkdocs: publics_as_website_mkdocs.md
     - Agentic Design Patterns: Agentic_Design_Patterns.md
     - Conclusion: Conclusion.md
     - Glossary: Glossary.md
     - Index of Terms: Index_of_Terms.md
     - LICENSE: LICENSE.md
     - Online Contribution-Frequently Asked Questions Agentic Design Patterns: Online_Contribution-Frequently_Asked_Questions_Agentic_Design_Patterns.md
+    - publics as website mkdocs: publics_as_website_mkdocs.md
   # AUTO_NAV_END

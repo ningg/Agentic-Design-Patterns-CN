@@ -12,7 +12,7 @@ we were getting a peek into a nascent form of cognition.
 
 The first time I experimented with one of the new agentic coding tools, I felt that familiar spark of magic. I tasked it with a personal project I’d never found the time for: migrating a charity website from a simple web builder to a proper, modern CI/CD environment. For the next twenty minutes, it went to work, asking clarifying questions, requesting credentials, and providing status updates. It felt less like using a tool and more like collaborating with a junior developer. When it presented me with a fully deployable package, complete with impeccable documentation and unit tests, I was floored.
 
-> 我第一次试用新的智能体化编程工具时，又感受到那种熟悉的「魔法」火花。我交给它一件私事——我一直抽不出时间做的那种：把慈善网站从简易建站工具迁到规范的现代 CI/CD 环境。接下来约二十分钟里，它追问澄清、请求凭据、同步进度——不像在用工具，更像与一名初级开发者结对。当它交出可完整部署的包，附带无可挑剔的文档与单元测试时，我彻底折服。
+> 我第一次试用新的智能体化编程工具时，又感受到那种熟悉的「魔法」火花。我交给它一件私事——我一直抽不出时间做的那种：把慈善网站从简易建站工具迁到规范的现代 CI/CD 环境。接下来约二十分钟里，它追问澄清、请求凭据、同步进度——不像在用工具，更像与一名初级开发者结对工作。当它交出可完整部署的包，附带无可挑剔的文档与单元测试时，我彻底折服。
 
 Of course, it wasn't perfect. It made mistakes. It got stuck. It required my supervision and, crucially, my judgment to steer it back on course. The experience drove home a lesson I’ve learned the hard way over a long career: you cannot afford to trust blindly. Yet, the process was fascinating. Peeking into its "chain of thought" was like watching a mind at work—messy, non-linear, full of starts, stops, and self-corrections, not unlike our own human reasoning. It wasn’t a straight line; it was a random walk toward a solution. Here was the kernel of something new: not just an intelligence that could generate content, but one that could generate a *plan*.
 
