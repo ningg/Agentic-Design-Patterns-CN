@@ -2,7 +2,7 @@
 
 In simple terms, an **AI agent** is a system designed to perceive its environment and take actions to achieve a specific goal. It's an evolution from a standard Large Language Model (LLM), enhanced with the abilities to plan, use tools, and interact with its surroundings. Think of an Agentic AI as a smart assistant that learns on the job. It follows a simple, five-step loop to get things done (see Fig.1):
 
-> 简而言之，**智能体**是为感知环境、采取行动并达成特定目标而设计的系统。它建立在标准大语言模型（LLM）之上，并进一步具备规划、调用工具以及与环境交互的能力。不妨把智能体化 AI 视为一位在实践中持续学习的智能助手：它通过一个清晰的五步闭环来推进任务（见图 1）：
+> 简单来说，**智能体**是为感知环境、采取行动并达成特定目标而设计的系统。它建立在标准大语言模型（LLM）之上，并进一步具备规划、调用工具以及与环境交互的能力。不妨把智能体化 AI 视为一位在实践中持续学习的智能助手：它通过一个清晰的五步闭环来推进任务（见图 1）：
 
 1. **Get the Mission:** You give it a goal, like "organize my schedule."
 2. **Scan the Scene:** It gathers all the necessary information—reading emails, checking calendars, and accessing contacts—to understand what's happening.
@@ -24,7 +24,7 @@ Fig.1: Agentic AI functions as an intelligent assistant, continuously learning t
 
 Agents are becoming increasingly popular at a stunning pace. According to recent studies, a majority of large IT companies are actively using these agents, and a fifth of them just started within the past year. The financial markets are also taking notice. By the end of 2024, AI agent startups had raised more than $2 billion, and the market was valued at $5.2 billion. It's expected to explode to nearly $200 billion in value by 2034\. In short, all signs point to AI agents playing a massive role in our future economy.
 
-> 智能体正以惊人速度普及。近期研究显示，多数大型 IT 企业已在积极使用智能体，其中约五分之一是在过去一年才起步。资本市场同样瞩目：截至 2024 年底，智能体初创公司融资逾 20 亿美元，市场规模约 52 亿美元；预计到 2034 年将飙升至近 2000 亿美元。简言之，种种信号表明，智能体将在未来经济中扮演关键角色。
+> 智能体正以惊人速度普及。近期研究显示，多数大型 IT 企业已在积极使用智能体，其中约五分之一是在过去一年才起步。资本市场同样火热：截至 2024 年底，智能体初创公司融资逾 20 亿美元，市场规模约 52 亿美元；预计到 2034 年将飙升至近 2000 亿美元。简言之，种种信号表明，智能体将在未来经济中扮演关键角色。
 
 In just two years, the AI paradigm has shifted dramatically, moving from simple automation to sophisticated, autonomous systems (see Fig. 2). Initially, workflows relied on basic prompts and triggers to process data with LLMs. This evolved with Retrieval-Augmented Generation (RAG), which enhanced reliability by grounding models on factual information. We then saw the development of individual AI Agents capable of using various tools.  Today, we are entering the era of Agentic AI, where a team of specialized agents works in concert to achieve complex goals, marking a significant leap in AI's collaborative power.
 
@@ -49,23 +49,23 @@ Before doing that, let's examine examples that span the range of agent complexit
 
 Fig. 3: Various instances demonstrating the spectrum of agent complexity.
 
-> 图 3：若干实例，展示智能体复杂度的谱系。
+> 图 3：分层形式，展示智能体复杂度的层级。
 
 ## Level 0: The Core Reasoning Engine
 
 While an LLM is not an agent in itself, it can serve as the reasoning core of a basic agentic system. In a 'Level 0' configuration, the LLM operates without tools, memory, or environment interaction, responding solely based on its pretrained knowledge. Its strength lies in leveraging its extensive training data to explain established concepts. The trade-off for this powerful internal reasoning is a complete lack of current-event awareness. For instance, it would be unable to name the 2025 Oscar winner for "Best Picture" if that information is outside its pre-trained knowledge.
 
-> LLM 本身并非智能体，却可充当基础智能体化系统的推理核心。在「0 级」配置下，LLM 无工具、无记忆、不与环境交互，仅依预训练知识作答。其长处在于借助海量训练数据阐释既有概念；代价则是缺乏对时事的感知——例如若信息不在预训练范围内，它无法回答 2025 年奥斯卡「最佳影片」得主是谁。
+> LLM 本身并非智能体，却可充当基础智能体化系统的推理核心。在「0 级」配置下，LLM 无工具、无记忆、不与环境交互，仅依预训练知识作答。其长处在于借助海量训练数据阐释既有概念；代价则是缺乏对最新信息的感知——例如若信息不在预训练范围内，它无法回答 2025 年奥斯卡「最佳影片」得主是谁。
 
 ## Level 1: The Connected Problem-Solver
 
 At this level, the LLM becomes a functional agent by connecting to and utilizing external tools. Its problem-solving is no longer limited to its pre-trained knowledge. Instead, it can execute a sequence of actions to gather and process information from sources like the internet (via search) or databases (via Retrieval Augmented Generation, or RAG). For detailed information, refer to Chapter 14\.
 
-> 在这一层，LLM 通过接入并调用外部工具，升格为可落地的功能性智能体：解题不再受限于预训练知识，而能串联多步动作，从互联网（搜索）或数据库（检索增强生成，RAG）等处采集并处理信息。详见第 14 章。
+> 在这一层，LLM 通过接入并调用外部工具，升级为可落地的功能性智能体：解题不再受限于预训练知识，而能串联多步动作，从互联网（搜索）或数据库（检索增强生成，RAG）等处采集并处理信息。详见第 14 章。
 
 For instance, to find new TV shows, the agent recognizes the need for current information, uses a search tool to find it, and then synthesizes the results. Crucially, it can also use specialized tools for higher accuracy, such as calling a financial API to get the live stock price for AAPL. This ability to interact with the outside world across multiple steps is the core capability of a Level 1 agent.
 
-> 例如查找新剧时，智能体判断需要最新信息，便调用搜索工具检索并综合结果。它也可调用专用工具换取更高准确度，例如通过金融 API 拉取 AAPL 实时股价。能够跨多步与外部世界交互，是 1 级智能体的核心能力。
+> 例如查找新剧时，智能体判断需要最新信息，便调用搜索工具检索并综合结果。它也可调用专用工具换取更高准确度，例如通过金融 API 拉取 AAPL 实时股价。能够**多次**`与外部世界交互`，是 1 级智能体的核心能力。
 
 ## Level 2: The Strategic Problem-Solver
 
@@ -102,13 +102,13 @@ To bring this concept to life, consider the intricate workflow of launching a ne
 
 While this vision of autonomous, team-based automation is already being developed, it's important to acknowledge the current hurdles. The effectiveness of  such multi-agent systems is presently constrained by the reasoning limitations of LLMs they are using. Furthermore, their ability to genuinely learn from one another and improve as a cohesive unit is still in its early stages. Overcoming these technological bottlenecks is the critical next step, and doing so will unlock the profound promise of this level: the ability to automate entire business workflows from start to finish.
 
-> 尽管「自主团队式自动化」的愿景已在路上，仍需直面现实掣肘：多智能体系统的上限仍受制于底层 LLM 的推理能力；智能体之间能否真正互学、并以整体进化，也尚处早期。攻克这些瓶颈是下一程的关键，也将兑现本层级的长远承诺：端到端自动化整条业务流程。
+> 尽管「自主团队式自动化」的愿景已经越来越清晰，仍需面对现实约束：多智能体系统的上限仍受制于底层 LLM 的推理能力；智能体之间能否真正互学、并以整体进化，也仍在早期。解决这些瓶颈是下一程的关键，也将兑现本层级的长远承诺：端到端自动化整条业务流程。
 
 ## The Future of Agents: Top 5 Hypotheses
 
 AI agent development is progressing at an unprecedented pace across domains such as software automation, scientific research, and customer service among others. While current systems are impressive, they are just the beginning. The next wave of innovation will likely focus on making agents more reliable, collaborative, and deeply integrated into our lives. Here are five leading hypotheses for what's next (see Fig. 4).
 
-> 智能体开发在软件自动化、科学研究、客户服务等领域正以空前速度推进。今天的系统虽已亮眼，却只是序幕。下一波创新或将集中在：提升可靠性、强化协作、以及把智能体更深地嵌入日常生活。以下是与「下一步」相关的五条主流假设（见图 4）。
+> 智能体开发在软件自动化、科学研究、客户服务等领域正以空前速度推进。今天的系统虽让让人眼前一亮，却只是序幕。下一波创新或将集中在：提升可靠性、强化协作、以及把智能体更深地嵌入日常生活。以下是与「下一步」相关的五条主流假设（见图 4）。
 
 
 ![Five Hypotheses about the Future of Agents](../assets-new/Five_Hypotheses_about_the_Future_of_Agents.png)
@@ -121,7 +121,7 @@ Fig. 4: Five hypotheses about the future of agents
 
 The first hypothesis is that AI agents will evolve from narrow specialists into true generalists capable of managing complex, ambiguous, and long-term goals with high reliability. For instance, you could give an agent a simple prompt like, "Plan my company's offsite retreat for 30 people in Lisbon next quarter." The agent would then manage the entire project for weeks, handling everything from budget approvals and flight negotiations to venue selection and creating a detailed itinerary from employee feedback, all while providing regular updates. Achieving this level of autonomy will require fundamental breakthroughs in AI reasoning, memory, and near-perfect reliability. An alternative, yet not mutually exclusive, approach is the rise of Small Language Models (SLMs). This "Lego-like" concept involves composing systems from small, specialized expert agents rather than scaling up a single monolithic model. This method promises systems that are cheaper, faster to debug, and easier to deploy. Ultimately, the development of large generalist models and the composition of smaller specialized ones are both plausible paths forward, and they could even complement each other.
 
-> 假设一：智能体将从狭窄领域的专才，演进为真正的通才，能够以较高可靠性处理复杂、模糊且周期较长的目标。例如，你只需给它一个简单提示：「为公司规划一次下季度在里斯本举行、30 人参加的团建活动。」随后，智能体就可能在数周内接手整个项目，处理从预算审批、机票谈判、场地选择，到根据员工反馈制定详细行程等各项事务，并持续同步进展。要实现这种程度的自主性，仍有赖于 AI 在推理、记忆和接近完美的可靠性方面取得根本性突破。另一条可并行推进、且并不与之冲突的路径，是小语言模型（SLM）的兴起。这种类似「乐高拼装」的思路，不是继续扩张单一的大一统模型，而是用多个小型、专精的专家智能体来组合系统。这样的方法有望让系统更便宜、更容易调试，也更容易部署。归根结底，发展大型通才模型和组合小型专精模型，都是合理可行的方向，而且二者还有可能彼此互补。
+> 假设一：智能体将从特定领域的专才，演进为真正的通才，能够以较高可靠性处理复杂、模糊且周期较长的目标。例如，你只需给它一个简单提示：「为公司规划一次下季度在里斯本举行、30 人参加的团建活动。」随后，智能体就可能在数周内接手整个项目，处理从预算审批、机票谈判、场地选择，到根据员工反馈制定详细行程等各项事务，并持续同步进展。要实现这种程度的自主性，仍有赖于 AI 在推理、记忆和接近完美的可靠性方面取得根本性突破。另一条可并行推进、且并不与之冲突的路径，是小语言模型（SLM）的兴起。这种类似「乐高拼装」的思路，不是继续扩张单一的大一统模型，而是用多个小型、专精的专家智能体来组合系统。这样的方法有望让系统更便宜、更容易调试，也更容易部署。归根结底，发展大型通才模型和组合小型专精模型，都是合理可行的方向，而且二者还有可能彼此互补。
 
 ### Hypothesis 2: Deep Personalization and Proactive Goal Discovery
 
@@ -170,7 +170,7 @@ For instance, an entrepreneur would simply declare the intent: "Launch a success
 
 In essence, an AI agent represents a significant leap from traditional models, functioning as an autonomous system that perceives, plans, and acts to achieve specific goals. The evolution of this technology is advancing from single, tool-using agents to complex, collaborative multi-agent systems that tackle multifaceted objectives. Future hypotheses predict the emergence of generalist, personalized, and even physically embodied agents that will become active participants in the economy. This ongoing development signals a major paradigm shift towards self-improving, goal-driven systems poised to automate entire workflows and fundamentally redefine our relationship with technology.
 
-> 总之，相对传统模型，智能体是一次范式级跃迁：它以自主系统之姿感知环境、规划路径并付诸行动以达成目标。技术脉络正由「单智能体 + 工具调用」迈向「协作式多智能体」以拆解多维目标。前述假设则指向通才化、深度个性化乃至具身智能体全面参与经济活动的未来。这一演进标志着自我改进、目标驱动系统的兴起，有望把整条工作流自动化，并重塑人与技术的关系。
+> 总之，相对传统模型，智能体是一次范式级跃迁：它以自主系统的形式，感知环境、规划路径并付诸行动以达成目标。技术脉络正由「单智能体 + 工具调用」迈向「协作式多智能体」以拆解多维目标。前述假设则指向通才化、深度个性化乃至具身智能体全面参与经济活动的未来。这一演进标志着自我改进、目标驱动系统的兴起，有望把整条工作流自动化，并重塑人与技术的关系。
 
 ## References
 

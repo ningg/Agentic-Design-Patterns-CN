@@ -2,7 +2,7 @@
 
 Welcome to "Agentic Design Patterns: A Hands-On Guide to Building Intelligent Systems." As we look across the landscape of modern artificial intelligence, we see a clear evolution from simple, reactive programs to sophisticated, autonomous entities capable of understanding context, making decisions, and interacting dynamically with their environment and other systems. These are the intelligent agents and the agentic systems they comprise.
 
-> 欢迎阅读《Agentic Design Patterns：构建智能系统的实践指南》。纵览当代人工智能，可见一条清晰演进：从简单、被动的程序，到能理解情境、做出决策，并与环境及其他系统动态交互的复杂自主实体——亦即智能体，以及由它们构成的智能体化系统。
+> 欢迎阅读《Agentic Design Patterns：构建智能系统的实践指南》。纵览当代人工智能，可见一条清晰演进：从简单、被动的 **程序**，到能理解情境、做出决策，并与环境及其他系统动态交互的复杂自主实体——亦即**智能体**，以及由它们构成的 **智能体化系统** `Agentic System`。
 
 The advent of powerful large language models (LLMs) has provided unprecedented capabilities for understanding and generating human-like content such as text and media, serving as the cognitive engine for many of these agents. However, orchestrating these capabilities into systems that can reliably achieve complex goals requires more than just a powerful model. It requires structure, design, and a thoughtful approach to how the agent perceives, plans, acts, and interacts.
 
@@ -28,35 +28,35 @@ Imagine you need a system to manage customer inquiries. A traditional system mig
 
 Agentic systems are often characterized by features like **autonomy**, allowing them to act without constant human oversight; **proactiveness**, initiating actions towards their goals; and **reactiveness**, responding effectively to changes in their environment. They are fundamentally **goal-oriented**, constantly working towards objectives. A critical capability is **tool use**, enabling them to interact with external APIs, databases, or services – effectively reaching out beyond their immediate canvas. They possess **memory**, retain information across interactions, and can engage in **communication** with users, other systems, or even other agents operating on the same or connected canvases.
 
-> 智能体化系统的典型特征包括：**自主性**（无需持续人工盯守也能行动）、**主动性**（主动朝目标推进）、**反应性**（对环境变化做出有效响应）。它们从根本上是**目标导向**的。关键能力还包括**工具使用**（调用外部 API、数据库或服务，实质上将能力延展到画布之外）、**记忆**（跨多轮交互保留信息），以及**通信**（与用户、其他系统，或同一画布及互联画布上的其他智能体交互）。
+> 智能体化系统的典型特征包括：**自主性**（无需人工盯守）、**主动性**（主动朝目标推进）、**反应性**（对环境变化做出有效响应）。它们从根本上是**目标导向**的。关键能力还包括**工具使用**（调用外部 API、数据库或服务，实质上将能力延展到画布之外）、**记忆**（跨多轮交互保留信息），以及**通信**（与用户、其他系统，或同一画布及互联画布上的其他智能体交互）。
 
 Effectively realizing these characteristics introduces significant complexity. How does the agent maintain state across multiple steps on its canvas? How does it decide *when* and *how* to use a tool? How is communication between different agents managed? How do you build resilience into the system to handle unexpected outcomes or errors?
 
-> 要真正把上述特征落地，会引入显著复杂性：智能体如何在多步流程中维持画布上的状态？如何决定*何时*、*如何*调用工具？多智能体之间的通信如何治理？怎样为系统注入韧性，以消化意外结果或错误？
+> 要真正把上述特征落地，会引入较高复杂性：智能体如何在多步流程中维持画布上的状态？如何决定 *何时*、*如何* 调用工具？多智能体之间的通信如何治理？怎样为系统注入韧性，以消化意外结果或错误？
 
 ## Why Patterns Matter in Agent Development
 
 This complexity is precisely why agentic design patterns are indispensable. They are not rigid rules, but rather battle-tested templates or blueprints that offer proven approaches to standard design and implementation challenges in the agentic domain. By recognizing and applying these design patterns, you gain access to solutions that enhance the structure, maintainability, reliability, and efficiency of the agents you build on your canvas.
 
-> 这种复杂性，正是智能体化设计模式不可或缺的原因。它们不是僵死的教条，而是经实战检验的模板与蓝图，为智能体领域常见的设计与实现难题提供成熟路径。识别并运用这些模式，有助于提升你在画布上所构建智能体的结构清晰度、可维护性、可靠性与效率。
+> 智能体设计模式，就用来解决上述复杂性。它们不是僵死的教条，而是经实战检验的模板与蓝图，为智能体领域常见的设计与实现难题提供成熟解决建议。识别并运用这些模式，有助于提升你在画布上所构建智能体的结构清晰度、可维护性、可靠性与效率。
 
 Using design patterns helps you avoid reinventing fundamental solutions for tasks like managing conversational flow, integrating external capabilities, or coordinating multiple agent actions. They provide a common language and structure that makes your agent's logic clearer and easier for others (and yourself in the future) to understand and maintain. Implementing patterns designed for error handling or state management directly contributes to building more robust and reliable systems. Leveraging these established approaches accelerates your development process, allowing you to focus on the unique aspects of your application rather than the foundational mechanics of agent behavior.
 
-> 使用设计模式，可以避免在对话流管理、外部能力集成或多智能体协同等任务上反复“造轮子”。它们提供共同的语言与结构，让智能体逻辑更易理解，也更便于交接给“未来的自己”。面向错误处理或状态管理的模式，能直接夯实系统的稳健性与可靠性。借助这些成熟做法，你可以加快交付节奏，把精力集中在应用的独特价值上，而不是智能体行为的底层机制上。
+> 使用设计模式，可以避免在对话流管理、外部能力集成或多智能体协同等任务上反复“造轮子”。它们提供共同的语言与结构，让智能体逻辑更易理解，也更便于交接给“未来的自己”。面向错误处理或状态管理的模式，能直接增强系统的稳健性与可靠性。借助这些成熟做法，你可以加快交付节奏，把精力集中在应用的独特价值上，而不是智能体行为的底层机制上。
 
 This book extracts 21 key design patterns that represent fundamental building blocks and techniques for constructing sophisticated agents on various technical canvases. Understanding and applying these patterns will significantly elevate your ability to design and implement intelligent systems effectively.
 
-> 本书提炼 21 个关键设计模式，涵盖在不同技术画布上构建复杂智能体所需的基本构件与常用技法。理解并运用它们，将显著提升你设计与实现智能系统的成效。
+> 本书提炼 21 个关键设计模式，涵盖在构建智能体所需的基础组件与常用方法。理解、使用这些设计模式，能高效设计智能系统。
 
 ## Overview of the Book and How to Use It
 
 This book, "Agentic Design Patterns: A Hands-On Guide to Building Intelligent Systems," is crafted to be a practical and accessible resource. Its primary focus is on clearly explaining each agentic pattern and providing concrete, runnable code examples to demonstrate its implementation. Across 21 dedicated chapters, we will explore a diverse range of design patterns, from foundational concepts like structuring sequential operations (Prompt Chaining) and external interaction (Tool Use) to more advanced topics like collaborative work (Multi-Agent Collaboration) and self-improvement (Self-Correction).
 
-> 本书力求成为一本实用且易读的参考书：逐一讲清每种智能体化模式，并配以可运行的代码示例演示其落地方式。全书 21 章各聚焦一类模式——从顺序编排（提示链）、外部交互（工具使用）等基础话题，到多智能体协作、自我改进（自校正）等进阶主题。
+> 本书力求成为一本实用且易读的参考书：逐一讲清每种智能体模式，并且配有代码示例。全书共 21 章，每章聚焦一类模式——从顺序编排（提示链）、外部交互（工具使用）等基础组件，到多智能体协作、自我改进（自校正）等进阶主题。
 
 The book is organized chapter by chapter, with each chapter delving into a single agentic pattern. Within each chapter, you will find:
 
-> 全书按章编排，每章深入讲解一种智能体化模式，结构包括：
+> 全书按章编排，每章深入讲解一种智能体模式，结构包括：
 
 - A detailed **Pattern Overview** providing a clear explanation of the pattern and its role in agentic design.  
 - A section on **Practical Applications & Use Cases** illustrating real-world scenarios where the pattern is invaluable and the benefits it brings.  
@@ -64,19 +64,19 @@ The book is organized chapter by chapter, with each chapter delving into a singl
 - **Key Takeaways** summarizing the most crucial points for quick review.  
 - **References** for further exploration, providing resources for deeper learning on the pattern and related concepts.
 
-> - **模式概述**：阐明模式本身及其在智能体化设计中的位置。
+> - **模式概述**：讲解模式本身要点，以及其在智能体化设计中的位置。
 > - **实践应用与用例**：展示模式在真实场景中的价值与收益。
 > - **动手代码示例**：基于主流智能体开发框架给出可运行代码，在技术画布的语境下演示模式。
 > - **要点回顾**：提炼最关键内容，便于快速复盘。
-> - **参考文献**：指向延伸阅读（文献条目仍以英文呈现，见原文）。
+> - **参考文献**：提供扩展阅读（文献条目仍以英文呈现，见原文）。
 
 While the chapters are ordered to build concepts progressively, feel free to use the book as a reference, jumping to chapters that address specific challenges you face in your own agent development projects. The appendices provide a comprehensive look at advanced prompting techniques, principles for applying AI agents in real-world environments, and an overview of essential agentic frameworks. To complement this, practical online-only tutorials are included, offering step-by-step guidance on building agents with specific platforms like AgentSpace and for the command-line interface. The emphasis throughout is on practical application; we strongly encourage you to run the code examples, experiment with them, and adapt them to build your own intelligent systems on your chosen canvas.
 
-> 各章顺序便于循序渐进，但你也可以把本书当手册，按问题跳读相关章节。附录覆盖高级提示技术、在真实环境中应用 智能体的原则，以及主要智能体化框架速览。另有仅在线发布的实践教程，分步演示如何在 AgentSpace 等平台与命令行环境中构建智能体。全书强调动手：务必运行、改写并实验示例，在你选定的画布上搭建属于自己的智能系统。
+> 各章顺序便于循序渐进，但你也可以把本书当手册，按问题跳读相关章节。附录覆盖高级提示技术、在真实环境中应用 智能体的实践建议，以及主要智能体化框架速览。另有仅在线发布的实践教程，分步演示如何在 AgentSpace 等平台与命令行环境中构建智能体。全书强调动手实践：务必运行、改写并实验示例，在你选定的画布上搭建属于自己的智能系统。
 
 A great question I hear is, 'With AI changing so fast, why write a book that could be quickly outdated?' My motivation was actually the opposite. It's precisely because things are moving so quickly that we need to step back and identify the underlying principles that are solidifying. Patterns like RAG, Reflection, Routing, Memory and the others I discuss, are becoming fundamental building blocks. This book is an invitation to reflect on these core ideas, which provide the foundation we need to build upon. Humans need these reflection moments on foundation patterns
 
-> 常有人问：「AI 变化这么快，为何还要写一本可能很快过时的书？」我的动机恰恰相反：正因为变化快，才更需要退后一步，辨认正在沉淀的底层原则。RAG、反思、路由、记忆等我讨论的模式，正逐渐成为基本构件。本书邀请你停下来审视这些核心思想——它们是我们继续建造的基石。人类尤其需要这种针对基础模式的「反思时刻」。
+> 常有人问：「AI 变化这么快，为何还要写一本可能很快过时的书？」我的动机恰恰相反：正因为变化快，才更需要做好基础，学习可沉淀的底层原则。RAG、反思、路由、记忆等模式，正逐渐成为基本组件。本书邀请你停下来审视这些核心思想——它们是我们继续建造的基石。人类尤其需要这种针对基础模式的「反思时刻」。
 
 ## Introduction to the Frameworks Used
 
@@ -90,4 +90,4 @@ These frameworks represent different facets of the agent development canvas, eac
 
 By the end of this book, you will not only understand the fundamental concepts behind 21 essential agentic patterns but also possess the practical knowledge and code examples to apply them effectively, enabling you to build more intelligent, capable, and autonomous systems on your chosen development canvas. Let's begin this hands-on journey!
 
-> 读完本书，你不仅将理解 21 个核心智能体化模式背后的基本概念，还将掌握将其真正落地所需的知识与代码抓手，从而在你选定的开发画布上构建更智能、更强韧、更自主的系统。让我们开启这段动手实践之旅。
+> 读完本书，你不仅将理解 21 个核心智能体化模式背后的基本概念，还将掌握将其真正落地所需的知识与代码要点，从而在你选定的开发画布上构建更智能、更强韧、更自主的系统。让我们开启这段动手实践之旅。
